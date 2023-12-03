@@ -1,13 +1,17 @@
 # Flutter clairvoyant hackathon Dashboard
 
-**Packages we are using:**
+--------------------------------------------------------
 
-- flutter_svg: [link](https://pub.dev/packages/flutter_svg)
-- google_fonts: [link](https://pub.dev/packages/google_fonts)
-- provider: [link](https://pub.dev/packages/provider)
+How to Use?
 
-**Fonts**
+-- Create a database named "growthgenie"
+-- import the Schema provided for this hackathon into the database
+-- Clone the Java project from https://github.com/kmrvivek/HackathonGrowthGenie/tree/vivek
+-- Run this project into your local environment
+-- Make sure your local server is listening on port 8080
+-- Clone the flutter project into your local machine
+-- Run the flutter-run to run the project
+-- Enjoy the show
 
-- Poppins [link](https://fonts.google.com/specimen/Poppins)
 
 

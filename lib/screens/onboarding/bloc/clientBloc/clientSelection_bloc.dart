@@ -23,6 +23,7 @@ class ClientSelectionBloc extends Bloc<ClientSelectionEvent, ClientSelectionStat
     });
     on<ClientSubmittedEvent>((event, emit) {
       fetchPost(event.clientId);
+      // fetchHistoryPost(event.clientId);
       emit(ClientIdLoadingState());
     });
   }
