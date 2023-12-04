@@ -61,16 +61,7 @@ class ClientSelectionBloc extends Bloc<ClientSelectionEvent, ClientSelectionStat
     }
   }
 
-  RecentTransaction recentTransaction = RecentTransaction();
-  void fetchTransactionPost(String clintId) async {
-    try{
-      List<RecentTransactionsModel> post = await recentTransaction.fetchPost(clintId);
-      emit(RecentTransactionLoadedState(post));
-    }
-    on DioException catch(ex){
-      emit(RecentTransactionErrorState(ex.message.toString()));
-    }
-  }
+
 
   AvailableBalance availableBalance = AvailableBalance();
   void fetchAvailableBalancePost(String clintId) async {

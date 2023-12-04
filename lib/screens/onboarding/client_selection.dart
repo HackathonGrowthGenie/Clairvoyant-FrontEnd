@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../dashboard/components/my_fields.dart';
+import '../dashboard/components/inner_grid.dart';
 import '../dashboard/components/topInvestors_components/top_investors.dart';
 
 

@@ -1,6 +1,7 @@
 import 'package:clairvoyant/logic/cubits/performing_investment/performing_inv_cubit.dart';
 import 'package:clairvoyant/logic/cubits/popular_investment/popularInv_cubit.dart';
 import 'package:clairvoyant/logic/cubits/top_investor/top_investor_cubit.dart';
+import 'package:clairvoyant/screens/dashboard/cubits/transaction_cubit/transaction_cubit.dart';
 import 'package:clairvoyant/screens/onboarding/bloc/clientBloc/clientSelection_bloc.dart';
 import 'package:clairvoyant/utils/constants.dart';
 import 'package:clairvoyant/screens/onboarding/splash.dart';
@@ -29,6 +30,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => PerformingInvCubit(),
+        ),
+        BlocProvider(
+          create: (context) => TransactionCubit(),
         ),
       ],
       child: MaterialApp(

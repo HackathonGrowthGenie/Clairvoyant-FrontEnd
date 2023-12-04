@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../logic/cubits/top_investor/top_investor_cubit.dart';
 import '../../../../logic/cubits/top_investor/top_investor_state.dart';
 import '../../../../utils/constants.dart';
-import '../my_fields.dart';
+import '../inner_grid.dart';
 import 'my_investments.dart';
 
 class TopInvestorsGrid extends StatelessWidget {

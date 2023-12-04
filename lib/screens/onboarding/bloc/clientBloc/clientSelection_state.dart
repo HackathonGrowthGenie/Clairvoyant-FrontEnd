@@ -51,16 +51,6 @@ class TaxAssessmentErrorState extends ClientSelectionState{
   TaxAssessmentErrorState(this.error);
 }
 
-class RecentTransactionLoadingState extends ClientSelectionState{}
-class RecentTransactionLoadedState extends ClientSelectionState{
-  final List<RecentTransactionsModel> customer;
-  RecentTransactionLoadedState(this.customer);
-}
-class RecentTransactionErrorState extends ClientSelectionState{
-  final String error;
-  RecentTransactionErrorState(this.error);
-}
-
 class AvailableBalanceLoadingState extends ClientSelectionState{}
 class AvailableBalanceLoadedState extends ClientSelectionState{
   final List<AvailableBalanceModel> customer;

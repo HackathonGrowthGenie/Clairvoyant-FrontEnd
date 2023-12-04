@@ -8,6 +8,7 @@ import 'package:clairvoyant/data/models/topPerformingInvestment_model.dart';
 import 'package:clairvoyant/data/repository/api/api.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../models/historical_returns_model.dart';
 import '../models/popularInvestment_model.dart';
 import '../models/post_model.dart';
@@ -21,11 +22,18 @@ class CustomerRepository{
       Map<String, dynamic> postMaps = response.data;
       List list = [];
       list.add(postMaps);
+      getClientId(clientId);
       return  list.map((i) => CustomerModel.fromJson(i)).toList();
     }
     catch(ex){
       throw ex;
     }
+  }
+
+  Future<String> getClientId(String clientId) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('clientId', clientId);
+    return clientId;
   }
 
 }
@@ -81,7 +89,6 @@ class TopPerformingInvest{
       throw ex;
     }
   }
-
 }
 
 class HistoricalReturn{
@@ -121,17 +128,25 @@ class TaxAssesment{
 
 class RecentTransaction{
   API api =  API();
-  Future<List<RecentTransactionsModel>> fetchPost(String clientId)async{
-    try{
-      Response response = await api.sendRequest.get("/api/transactions/transactionsByCustomerId/$clientId");
-      Map<String, dynamic> postMaps = response.data;
-      List list = [];
-      list.add(postMaps);
-      return  list.map((i) => RecentTransactionsModel.fromJson(i)).toList();
+  Future<List<RecentTransactionsModel>> fetchPost(String clientId) async {
+    Response response = await api.sendRequest.get("/transactions/transactionsByCustomerId/$clientId");
+    final jsonData = response.data;
+    final List<RecentTransactionsModel> transactions = [];
+
+    // Check if the outer element is a List<Map>
+    if (jsonData is List<Map>) {
+      for (final transactionData in jsonData) {
+        transactions.add(RecentTransactionsModel.fromJson(transactionData as Map<String, dynamic>));
+      }
+    } else {
+      // Handle the case where there's a single transaction (List<List<Map>>)
+      for (final outerList in jsonData) {
+        for (final innerMap in outerList) {
+          transactions.add(RecentTransactionsModel.fromJson(innerMap));
+        }
+      }
     }
-    catch(ex){
-      throw ex;
-    }
+    return transactions;
   }
 }
 

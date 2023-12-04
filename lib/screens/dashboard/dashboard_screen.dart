@@ -1,6 +1,6 @@
 import 'package:clairvoyant/screens/onboarding/bloc/clientBloc/clientSelection_bloc.dart';
 import 'package:clairvoyant/utils/responsive.dart';
-import 'package:clairvoyant/screens/dashboard/components/my_fields.dart';
+import 'package:clairvoyant/screens/dashboard/components/inner_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,7 +8,7 @@ import '../../utils/constants.dart';
 import '../onboarding/bloc/clientBloc/clientSelection_state.dart';
 import 'components/header.dart';
 
-import 'components/top_portfolio.dart';
+import 'components/transactions.dart';
 import 'components/roi_details.dart';
 
 class DashboardScreen extends StatelessWidget {
