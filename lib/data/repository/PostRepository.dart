@@ -114,7 +114,7 @@ class TaxAssesment{
   API api =  API();
   Future<List<TaxAssesmentModel>> fetchPost(String clientId)async{
     try{
-      Response response = await api.sendRequest.get("/api/investmentAccount/taxCalculation/$clientId");
+      Response response = await api.sendRequest.get("/investmentAccount/taxCalculation/$clientId");
       Map<String, dynamic> postMaps = response.data;
       List list = [];
       list.add(postMaps);

@@ -1,11 +1,14 @@
 import 'package:clairvoyant/data/models/historical_returns_model.dart';
 import 'package:clairvoyant/data/models/popularInvestment_model.dart';
+import 'package:clairvoyant/data/models/tax_calculation_model.dart';
 import 'package:clairvoyant/logic/cubits/performing_investment/performing_inv_cubit.dart';
 import 'package:clairvoyant/logic/cubits/performing_investment/performing_inv_state.dart';
 import 'package:clairvoyant/logic/cubits/popular_investment/popularInv_cubit.dart';
 import 'package:clairvoyant/logic/cubits/popular_investment/popularInv_state.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/historical_returns/historical_returns_cubit.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/historical_returns/historical_returns_state.dart';
+import 'package:clairvoyant/screens/dashboard/cubits/tax_assessment/tax_assessment_cubit.dart';
+import 'package:clairvoyant/screens/dashboard/cubits/tax_assessment/tax_assessment_state.dart';
 import 'package:clairvoyant/screens/onboarding/bloc/clientBloc/clientSelection_bloc.dart';
 import 'package:clairvoyant/screens/onboarding/bloc/clientBloc/clientSelection_state.dart';
 import 'package:flutter/material.dart';
@@ -503,9 +506,14 @@ class _StorageDetailsState extends State<StorageDetails> {
               numOfTransactions: 6,
             ),
           ),
-          MyInvestmentLegends(
-            title: "Tax Assessment",
-            numOfTransactions: 2,
+          InkWell(
+            onTap: (){
+              _taskAssessmentModel(context, width);
+            },
+            child: MyInvestmentLegends(
+              title: "Tax Assessment",
+              numOfTransactions: 2,
+            ),
           ),
         ],
       ),
@@ -656,12 +664,12 @@ class _StorageDetailsState extends State<StorageDetails> {
           padding: const EdgeInsets.all(8.0),
           child: Container(
             height: 0.5,
-            width: MediaQuery.of(context).size.width,
+            width: width,
             color: Colors.white,
           ),
         ),
-        Card(
-          elevation: 5,
+        SizedBox(
+          height: 60,
           child: Card(
             elevation: 10,
             child: Row(
@@ -709,4 +717,107 @@ class _StorageDetailsState extends State<StorageDetails> {
       ],
     );
   }
+  _taskAssessmentModel(BuildContext context, width) {
+    showDialog(
+        context: context,
+        builder: (_) =>
+        new Dialog(
+          backgroundColor: Colors.transparent,
+          child: SingleChildScrollView(
+            child: new Container(
+                alignment: FractionalOffset.center,
+                padding: const EdgeInsets.all(20.0),
+                child: Center(
+                  child: Column(
+                    children: [
+                      new Image.asset(
+                        'assets/images/clair-logo.png',
+                        fit: BoxFit.cover,
+                      ),
+                      Text("TAX ASSESSMENT", style: TextStyle(fontSize: 24),),
+                      SizedBox(height: 20,),
+                      Padding(
+                        padding: const EdgeInsets.only(left:40, right: 40),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text("CUSTOMER ID",style: TextStyle(fontSize: 16),),
+                            Text("NAME",style: TextStyle(fontSize: 16),),
+                            Text("TOTAL TAX RETURNS",style: TextStyle(fontSize: 16),),
+                            Text("STOCKS RETURNS",style: TextStyle(fontSize: 16),),
+                            Text("MUTUAL FUNDS",style: TextStyle(fontSize: 16),),
+                            Text("FD RETURNS",style: TextStyle(fontSize: 16),)
+                          ],),
+                      ),
+                      BlocConsumer<TaxAssessmentCubit, TaxAssessmentState>(
+                        listener: (context, state) {
+                          // TODO: implement listener
+                        },
+                        builder: (context, state) {
+                          if(state is TaxAssessmentLoadedState){
+                            return ListView.builder(
+                              primary: false,
+                              shrinkWrap: true,
+                              itemCount: state.customer.length,
+                              itemBuilder: (context, index) {
+                                return taxReturnItem(index, width, state.customer);
+                              },
+                            );
+                          }else if(state is PopularInvLoadingState){
+                            return CircularProgressIndicator();
+                          }else{
+                            return Container();
+                          }
+
+                        },
+                      ),
+                    ],
+                  ),
+
+                )
+            ),
+          ),
+        ));
+  }
+  taxReturnItem(index, width, List<TaxAssesmentModel>list){
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            height: 0.5,
+            width: width,
+            color: Colors.white,
+          ),
+        ),
+        Column(
+          children: [
+            SizedBox(
+              height: 60,
+              child: Card(
+                elevation: 5,
+                child: Card(
+                  elevation: 10,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text('${list.first.customerId.toString()}'),
+                      Text('${list.first.name.toString()}'),
+                      Text('${list.first.totalTax.toString()}'),
+                      Text('${list[index].taxTypeReturn?.stocks.toString()}'),
+                      Text('${list[index].taxTypeReturn?.mutualFunds.toString()}'),
+                      Text('${list[index].taxTypeReturn?.fixDeposits.toString()}'),
+                    ],
+
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
 }
+
+
