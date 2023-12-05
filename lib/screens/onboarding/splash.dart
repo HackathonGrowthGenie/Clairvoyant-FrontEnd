@@ -12,7 +12,7 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   @override
   void initState() {
-    Future.delayed(const Duration(milliseconds: 200), () {
+    Future.delayed(const Duration(milliseconds: 10000), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
             builder: (context) => BlocProvider(
