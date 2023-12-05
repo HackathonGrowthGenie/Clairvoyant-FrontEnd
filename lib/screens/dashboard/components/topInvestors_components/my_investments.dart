@@ -1,6 +1,4 @@
 import 'dart:math';
-
-import 'package:clairvoyant/data/models/investments_model.dart';
 import 'package:clairvoyant/data/models/topInvestors_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

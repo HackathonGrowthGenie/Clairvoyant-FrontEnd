@@ -154,7 +154,7 @@ class AvailableBalance{
   API api =  API();
   Future<List<AvailableBalanceModel>> fetchPost(String clientId)async{
     try{
-      Response response = await api.sendRequest.get("/api/investmentAccount/getInvestmentByCustomerId/$clientId");
+      Response response = await api.sendRequest.get("/investmentAccount/getInvestmentByCustomerId/$clientId");
       Map<String, dynamic> postMaps = response.data;
       List list = [];
       list.add(postMaps);
