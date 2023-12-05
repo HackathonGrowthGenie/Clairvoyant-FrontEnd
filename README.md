@@ -18,13 +18,13 @@ we reuse the widgets later on other classes.
 How to Use?
 
 Create a database named "growthgenie"
-import the Schema provided for this hackathon into the database
-Clone the Java project from https://github.com/kmrvivek/HackathonGrowthGenie/tree/vivek
-Run this project into your local environment using your preferred IDE. we used Intellij Idea.
-Make sure your local server is listening to port 8080
+import the Schema provided for this hackathon into the database,
+Clone the Java project from https://github.com/kmrvivek/HackathonGrowthGenie/tree/vivek,
+Run this project into your local environment using your preferred IDE. We used Intellij Idea.
+Make sure your local server is listening to port 8080,
 Clone the flutter project into your local machine
-Run the flutter pub get command to download all the dependencies.
-Finally run flutter-run command to run the project
+running the flutter pub get command to download all the dependencies.
+Finally run flutter run command to run the project.
 
 _____________________________________________________________________
 
