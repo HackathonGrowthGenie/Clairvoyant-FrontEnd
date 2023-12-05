@@ -4,6 +4,8 @@ import 'package:clairvoyant/logic/cubits/performing_investment/performing_inv_cu
 import 'package:clairvoyant/logic/cubits/performing_investment/performing_inv_state.dart';
 import 'package:clairvoyant/logic/cubits/popular_investment/popularInv_cubit.dart';
 import 'package:clairvoyant/logic/cubits/popular_investment/popularInv_state.dart';
+import 'package:clairvoyant/screens/dashboard/cubits/historical_returns/historical_returns_cubit.dart';
+import 'package:clairvoyant/screens/dashboard/cubits/historical_returns/historical_returns_state.dart';
 import 'package:clairvoyant/screens/onboarding/bloc/clientBloc/clientSelection_bloc.dart';
 import 'package:clairvoyant/screens/onboarding/bloc/clientBloc/clientSelection_state.dart';
 import 'package:flutter/material.dart';
@@ -498,7 +500,7 @@ class _StorageDetailsState extends State<StorageDetails> {
             },
             child: MyInvestmentLegends(
               title: "Historical Returns",
-              numOfTransactions: 10,
+              numOfTransactions: 6,
             ),
           ),
           MyInvestmentLegends(
@@ -588,22 +590,23 @@ class _StorageDetailsState extends State<StorageDetails> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Text("MUTUAL FUNDS",style: TextStyle(fontSize: 16),),
-                          Text("FIX DEPOSITS",style: TextStyle(fontSize: 16),),
-                          Text("STOCKS",style: TextStyle(fontSize: 16),)
+                          Text("ID",style: TextStyle(fontSize: 16),),
+                          Text("NAME",style: TextStyle(fontSize: 16),),
+                          Text("DATE - TIME",style: TextStyle(fontSize: 16),),
+                          Text("RETURN VALUE",style: TextStyle(fontSize: 16),)
                         ],),
-                      BlocConsumer<PerformingInvCubit, PerfermingInvestState>(
+                      BlocConsumer<HistoricalReturnsCubit, HistoricalReturnState>(
                         listener: (context, state) {
                           // TODO: implement listener
                         },
                         builder: (context, state) {
-                          if(state is PerformingInvLoadedState){
+                          if(state is HistoricalReturnLoadedState){
                             return ListView.builder(
                               primary: false,
                               shrinkWrap: true,
                               itemCount: state.customer.length,
                               itemBuilder: (context, index) {
-                                return performingItem(index, width, state.customer);
+                                return historicalReturnItem(index, width, state.customer);
                               },
                             );
                           }else if(state is PopularInvLoadingState){
@@ -646,29 +649,6 @@ class _StorageDetailsState extends State<StorageDetails> {
     )
     );
   }
-  Widget HistoricalRetrunWidget(int index, double width, List<HistoricalReturnsModel> list) {
-    return Container(
-        width: width,
-        margin: const EdgeInsets.only(
-          bottom: 12,
-        ),
-        padding: EdgeInsets.symmetric(
-          horizontal: width / 20,
-        ),
-        decoration: BoxDecoration(
-          color: Colors.transparent,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: ListView.builder(
-          primary: false,
-          shrinkWrap: true,
-          itemCount: list.length,
-          itemBuilder: (context, index) {
-            return historicalReturnItem(index, width, list);
-          },
-        )
-    );
-  }
   formingItem(index, width, List<TopPerformingInvestment>list){
     return Column(
       children: [
@@ -704,20 +684,25 @@ class _StorageDetailsState extends State<StorageDetails> {
           padding: const EdgeInsets.all(8.0),
           child: Container(
             height: 0.5,
-            width: MediaQuery.of(context).size.width,
+            width: width,
             color: Colors.white,
           ),
         ),
-        Card(
-          elevation: 5,
+        SizedBox(
+          height: 60,
           child: Card(
-            elevation: 10,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('${list.first.currentDate.toString()}'),
-                Text('${list.first.returnValue.toString()}'),
-              ],
+            elevation: 5,
+            child: Card(
+              elevation: 10,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text('${list[index].customerId.toString()}'),
+                  Text('${list[index].customerName.toString()}'),
+                  Text('${list[index].currentDate?.split('T')[0]} ${list[index].currentDate?.split('T')[1].split('.')[0]}'),
+                  Text('${list[index].returnValue.toString()}'),
+                ],
+              ),
             ),
           ),
         ),
