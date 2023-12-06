@@ -61,7 +61,7 @@ class InvestmentCardGridView extends StatefulWidget {
 class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
   @override
   void initState() {
-    Future.delayed(const Duration(milliseconds: 200), () {
+    Future.delayed(const Duration(milliseconds: 600), () {
         startAnim = true;
         setState(() {});
     });
@@ -95,7 +95,7 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
                 Column(
                   children: [
                     AnimatedContainer(
-                      duration: Duration(milliseconds: 800),
+                      duration: Duration(milliseconds: 400),
                       curve: Curves.easeInOut,
                       transform: Matrix4.translationValues(
                           startAnim ? 0 : screenWidth, 0, 0),
@@ -140,7 +140,7 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
                 Column(
                   children: [
                     AnimatedContainer(
-                      duration: Duration(milliseconds: 800),
+                      duration: Duration(milliseconds: 600),
                       curve: Curves.easeInOut,
                       transform: Matrix4.translationValues(
                           startAnim ? 0 : screenWidth, 0, 0),

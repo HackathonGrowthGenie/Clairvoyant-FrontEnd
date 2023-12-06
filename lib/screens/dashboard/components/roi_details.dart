@@ -44,6 +44,25 @@ class _StorageDetailsState extends State<StorageDetails> {
                 child: Center(
                   child: Column(
                     children: [
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              'CANCEL',
+                              style: TextStyle(
+                                color: Color(0xFF22AB92),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                       new Image.asset(
                         'assets/images/clair-logo.png',
                         fit: BoxFit.cover,
@@ -56,20 +75,78 @@ class _StorageDetailsState extends State<StorageDetails> {
                         },
                         builder: (context, state) {
                           if(state is PopularInvLoadedState){
-                            return ListView.builder(
-                              primary: false,
-                              shrinkWrap: true,
-                              itemCount: state.customer.length,
-                              itemBuilder: (context, index) {
-                                return popularItem(index, width, state.customer);
-                              },
+                            return Container(
+                              height: MediaQuery.of(context).size.height,
+                              child: ListView.builder(
+                                itemCount: state.customer.length,
+                                itemBuilder: (context, index) {
+                                  final detail = state.customer[index];
+                                  return Column(
+                                    children: [
+                                      SizedBox(height: 20,),
+                                      Text('MUTUAL FUNDS',style: TextStyle(fontSize: 20),),
+                                      SizedBox(height: 20,),
+                                      ListView.builder(
+                                        shrinkWrap: true,
+                                        itemCount: detail.mutualFunds.length,
+                                        itemBuilder: (context, index) {
+                                          final fundName = detail.mutualFunds.keys.elementAt(index);
+                                          final fundAmount = detail.mutualFunds.values.elementAt(index);
+                                          return SizedBox(
+                                            height: 60,
+                                            child: Card(
+                                              child: Center(
+                                                  child: Text('$fundName: $fundAmount')),
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                      SizedBox(height: 20,),
+                                      Text('Stocks',style: TextStyle(fontSize: 20),),
+                                      SizedBox(height: 20,),
+                                      ListView.builder(
+                                        shrinkWrap: true,
+                                        itemCount: detail.stocks.length,
+                                        itemBuilder: (context, index) {
+                                          final stockName = detail.stocks.keys.elementAt(index);
+                                          final stockAmount = detail.stocks.values.elementAt(index);
+                                          return SizedBox(
+                                            height: 60,
+                                            child: Card(
+                                              child: Center(
+                                                  child: Text('$stockName: $stockAmount')),
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                      SizedBox(height: 20,),
+                                      Text('Fixed Deposits',style: TextStyle(fontSize: 20),),
+                                      SizedBox(height: 20,),
+                                      ListView.builder(
+                                        shrinkWrap: true,
+                                        itemCount: detail.fixedDeposits.length,
+                                        itemBuilder: (context, index) {
+                                          final depositOption = detail.fixedDeposits.keys.elementAt(index);
+                                          final depositRate = detail.fixedDeposits.values.elementAt(index);
+                                          return SizedBox(
+                                            height: 60,
+                                            child: Card(
+                                              child: Center(
+                                                  child: Text('$depositOption: $depositRate')),
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ),
                             );
                           }else if(state is PopularInvLoadingState){
                             return CircularProgressIndicator();
                           }else{
                             return Container();
                           }
-
                         },
                       ),
                     ],
@@ -79,385 +156,6 @@ class _StorageDetailsState extends State<StorageDetails> {
             ),
           ),
         ));
-  }
-  Widget popularItem(int index, double width, List<PopularInvestmentModel> list) {
-    return Container(
-      width: width,
-      margin: const EdgeInsets.only(
-        bottom: 12,
-      ),
-      padding: EdgeInsets.symmetric(
-        horizontal: width / 20,
-      ),
-      decoration: BoxDecoration(
-        color: Colors.transparent,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Column(
-        children: [
-          Text("Fix Deposits and Investor Count", style: TextStyle(fontSize: 20),),
-          SizedBox(height: 20,),
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(width:0.5, color: Colors.white,),
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-            ),
-            child: Card(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Monthly FD Customer Numbers",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text(
-                        "${list[index].fixedDeposits?.monthly.toString()}",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w100,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Quarterly FD Customer Numbers",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text(
-                        "${list[index].fixedDeposits?.quarterly.toString()}",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w100,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Yearly FD Customer Numbers",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text(
-                        "${list[index].fixedDeposits?.yearly.toString()}",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w100,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SizedBox(height: 40,),
-          Text("Mutual Funds and Investor Count", style: TextStyle(fontSize: 20),),
-          SizedBox(height: 20,),
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(width:0.5, color: Colors.white,),
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-            ),
-            child: Card(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Aditya Birla SunLife MutualFund",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text(
-                        "${list[index].mutualFunds?.adityaBirlaSunLifeMutualFund.toString()}",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w100,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Axis Mutual Fund",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text(
-                        "${list[index].mutualFunds?.axisMutualFund.toString()}",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w100,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Canara Robeco MutualFund",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text(
-                        "${list[index].mutualFunds?.canaraRobecoMutualFund.toString()}",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w100,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SizedBox(height: 5,),
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(width:0.5, color: Colors.white,),
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-            ),
-            child: Card(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "iCICI Prudential Mutual Fund",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text(
-                        "${list[index].mutualFunds?.iCICIPrudentialMutualFund.toString()}",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w100,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "SBI Mutual Fund",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text(
-                        "${list[index].mutualFunds?.sBIMutualFund.toString()}",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w100,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Kotak Mahindra Mutual Fund",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text(
-                        "${list[index].mutualFunds?.kotakMahindraMutualFund.toString()}",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w100,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SizedBox(height: 40,),
-          Text("Stocks and Customer Count", style: TextStyle(fontSize: 20),),
-          SizedBox(height: 20,),
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(width:0.5, color: Colors.white,),
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-            ),
-            child: Card(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Bajaj Finance",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text(
-                        "${list[index].stocks?.bajajFinservLimited.toString()}",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w100,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Adani Ports And Special Economic Zone Limited",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text(
-                        "${list[index].stocks?.adaniPortsAndSpecialEconomicZoneLimited.toString()}",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w100,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "HDFC Bank Limited",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text(
-                        "${list[index].stocks?.hDFCBankLimited}",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w100,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SizedBox(height: 5,),
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(width:0.5, color: Colors.white,),
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-            ),
-            child: Card(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Hero Moto Corp",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text(
-                        "${list[index].stocks?.heroMotoCorpLimited.toString()}",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w100,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Cipla Limited",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text(
-                        "${list[index].stocks?.ciplaLimited.toString()}",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w100,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Wipro Limited",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text(
-                        "${list[index].stocks?.wiproLimited}",
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w100,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
   }
   @override
   Widget build(BuildContext context) {
@@ -508,7 +206,7 @@ class _StorageDetailsState extends State<StorageDetails> {
           ),
           InkWell(
             onTap: (){
-              _taskAssessmentModel(context, width);
+              _taxAssessmentModel(context, width);
             },
             child: MyInvestmentLegends(
               title: "Tax Assessment",
@@ -532,6 +230,25 @@ class _StorageDetailsState extends State<StorageDetails> {
                 child: Center(
                   child: Column(
                     children: [
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              'CANCEL',
+                              style: TextStyle(
+                                color: Color(0xFF22AB92),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                       new Image.asset(
                         'assets/images/clair-logo.png',
                         fit: BoxFit.cover,
@@ -589,6 +306,25 @@ class _StorageDetailsState extends State<StorageDetails> {
                 child: Center(
                   child: Column(
                     children: [
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              'CANCEL',
+                              style: TextStyle(
+                                color: Color(0xFF22AB92),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                       new Image.asset(
                         'assets/images/clair-logo.png',
                         fit: BoxFit.cover,
@@ -669,15 +405,15 @@ class _StorageDetailsState extends State<StorageDetails> {
           ),
         ),
         SizedBox(
-          height: 60,
+          height: 90,
           child: Card(
             elevation: 10,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('${list.first.mutualFunds![index].fundName.toString()} - Net Asset Value: ${list.first.mutualFunds![index].nav.toString()}'),
-                Text('${list.first.fixedDeposits![index].fundName.toString()} - Net Asset Value: ${list.first.fixedDeposits![index].nav.toString()}'),
-                Text('${list.first.stocks![index].stockName.toString()} - Returns: ${list.first.stocks![index].returns.toString()}'),
+                Expanded(child: Text('${list.first.mutualFunds![index].fundName.toString()} - Net Asset Value: ${list.first.mutualFunds![index].nav.toString()}')),
+                Expanded(child: Text('${list.first.fixedDeposits![index].fundName.toString()} - Net Asset Value: ${list.first.fixedDeposits![index].nav.toString()}')),
+                Expanded(child: Text('${list.first.stocks![index].stockName.toString()} - Returns: ${list.first.stocks![index].returns.toString().split('.')[0]} %')),
               ],
             ),
           ),
@@ -717,7 +453,7 @@ class _StorageDetailsState extends State<StorageDetails> {
       ],
     );
   }
-  _taskAssessmentModel(BuildContext context, width) {
+  _taxAssessmentModel(BuildContext context, width) {
     showDialog(
         context: context,
         builder: (_) =>
@@ -730,37 +466,61 @@ class _StorageDetailsState extends State<StorageDetails> {
                 child: Center(
                   child: Column(
                     children: [
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              'CANCEL',
+                              style: TextStyle(
+                                color: Color(0xFF22AB92),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                       new Image.asset(
                         'assets/images/clair-logo.png',
                         fit: BoxFit.cover,
                       ),
                       Text("TAX ASSESSMENT", style: TextStyle(fontSize: 24),),
                       SizedBox(height: 20,),
-                      Padding(
-                        padding: const EdgeInsets.only(left:40, right: 40),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Text("CUSTOMER ID",style: TextStyle(fontSize: 16),),
-                            Text("NAME",style: TextStyle(fontSize: 16),),
-                            Text("TOTAL TAX RETURNS",style: TextStyle(fontSize: 16),),
-                            Text("STOCKS RETURNS",style: TextStyle(fontSize: 16),),
-                            Text("MUTUAL FUNDS",style: TextStyle(fontSize: 16),),
-                            Text("FD RETURNS",style: TextStyle(fontSize: 16),)
-                          ],),
-                      ),
                       BlocConsumer<TaxAssessmentCubit, TaxAssessmentState>(
                         listener: (context, state) {
                           // TODO: implement listener
                         },
                         builder: (context, state) {
                           if(state is TaxAssessmentLoadedState){
+                            var list = state.customer;
                             return ListView.builder(
                               primary: false,
                               shrinkWrap: true,
                               itemCount: state.customer.length,
                               itemBuilder: (context, index) {
-                                return taxReturnItem(index, width, state.customer);
+                                return Column(
+                                  children: [
+                                    Text("NAME",style: TextStyle(fontSize: 16),),
+                                    Text('${list.first.name.toString()}'),
+                                    SizedBox(height: 20,),
+                                    Text("TOTAL TAX RETURNS",style: TextStyle(fontSize: 16)),
+                                    Text('${list.first.totalTax ?? 0.0}'),
+                                    SizedBox(height: 20,),
+                                    Text("STOCKS RETURNS",style: TextStyle(fontSize: 16),),
+                                    Text('${list[index].taxTypeReturn?.stocks ?? 0.0}'),
+                                    SizedBox(height: 20,),
+                                    Text("MUTUAL FUNDS RETURNS",style: TextStyle(fontSize: 16),),
+                                    Text('${list[index].taxTypeReturn?.mutualFunds ?? 0.0}'),
+                                    SizedBox(height: 20,),
+                                    Text("FD RETURNS",style: TextStyle(fontSize: 16),),
+                                    Text('${list[index].taxTypeReturn?.fixDeposits ?? 0.0}')
+                                  ],
+                                );
                               },
                             );
                           }else if(state is PopularInvLoadingState){
@@ -778,45 +538,6 @@ class _StorageDetailsState extends State<StorageDetails> {
             ),
           ),
         ));
-  }
-  taxReturnItem(index, width, List<TaxAssesmentModel>list){
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            height: 0.5,
-            width: width,
-            color: Colors.white,
-          ),
-        ),
-        Column(
-          children: [
-            SizedBox(
-              height: 60,
-              child: Card(
-                elevation: 5,
-                child: Card(
-                  elevation: 10,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text('${list.first.customerId.toString()}'),
-                      Text('${list.first.name.toString()}'),
-                      Text('${list.first.totalTax.toString()}'),
-                      Text('${list[index].taxTypeReturn?.stocks.toString()}'),
-                      Text('${list[index].taxTypeReturn?.mutualFunds.toString()}'),
-                      Text('${list[index].taxTypeReturn?.fixDeposits.toString()}'),
-                    ],
-
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ],
-    );
   }
 }
 
