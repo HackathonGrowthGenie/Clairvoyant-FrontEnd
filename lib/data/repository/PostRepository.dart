@@ -170,7 +170,7 @@ class ROI{
   API api =  API();
   Future<List<ROIModel>> fetchPost(String clientId)async{
     try{
-      Response response = await api.sendRequest.get("/api/investmentAccount/roi/$clientId");
+      Response response = await api.sendRequest.get("/investmentAccount/roi/$clientId");
       Map<String, dynamic> postMaps = response.data;
       List list = [];
       list.add(postMaps);

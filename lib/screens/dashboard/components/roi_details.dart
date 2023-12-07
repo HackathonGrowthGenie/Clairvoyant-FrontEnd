@@ -95,8 +95,12 @@ class _StorageDetailsState extends State<StorageDetails> {
                                           return SizedBox(
                                             height: 60,
                                             child: Card(
-                                              child: Center(
-                                                  child: Text('$fundName: $fundAmount')),
+                                              elevation: 5,
+                                              child: Card(
+                                                elevation: 10,
+                                                child: Center(
+                                                    child: Text('$fundName: $fundAmount')),
+                                              ),
                                             ),
                                           );
                                         },
@@ -113,8 +117,12 @@ class _StorageDetailsState extends State<StorageDetails> {
                                           return SizedBox(
                                             height: 60,
                                             child: Card(
-                                              child: Center(
-                                                  child: Text('$stockName: $stockAmount')),
+                                              elevation: 5,
+                                              child: Card(
+                                                elevation: 10,
+                                                child: Center(
+                                                    child: Text('$stockName: $stockAmount')),
+                                              ),
                                             ),
                                           );
                                         },
@@ -131,8 +139,12 @@ class _StorageDetailsState extends State<StorageDetails> {
                                           return SizedBox(
                                             height: 60,
                                             child: Card(
-                                              child: Center(
-                                                  child: Text('$depositOption: $depositRate')),
+                                              elevation: 5,
+                                              child: Card(
+                                                elevation: 10,
+                                                child: Center(
+                                                    child: Text('$depositOption: $depositRate')),
+                                              ),
                                             ),
                                           );
                                         },

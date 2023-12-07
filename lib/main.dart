@@ -3,6 +3,7 @@ import 'package:clairvoyant/logic/cubits/popular_investment/popularInv_cubit.dar
 import 'package:clairvoyant/logic/cubits/top_investor/top_investor_cubit.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/available_balance_cubit/availablebal_cubit.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/historical_returns/historical_returns_cubit.dart';
+import 'package:clairvoyant/screens/dashboard/cubits/roi_cubit/roi_cubit.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/tax_assessment/tax_assessment_cubit.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/transaction_cubit/transaction_cubit.dart';
 import 'package:clairvoyant/screens/onboarding/bloc/clientBloc/clientSelection_bloc.dart';
@@ -45,6 +46,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => TaxAssessmentCubit(),
+        ),
+        BlocProvider(
+          create: (context) => ROICubit(),
         ),
       ],
       child: MaterialApp(
