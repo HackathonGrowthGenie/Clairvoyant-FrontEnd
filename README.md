@@ -38,7 +38,7 @@ _____________________________________________________________________________
 
 ## Solution Approach
 
-This application adheres to SOLID design principles in compliance to industry practices. The architecture is designed with a focus on scalability, high availability for the future expansion. Cubit is used where no user intervention is needed on UI like fetching data from the server, and Bloc is used where user pass some event into the UI eg. validating the username and passowrd. Followed a clean code architecture where repository directory contains all files that are responsible for network call, similarly bloc contains the files used to make that bolc work eg. bloc, state and event and similar for cubit directory for cubit and state. Further I used the reusable widgets for the components wherever I felt to reuse the widgets later on other classes.
+This application adheres to SOLID design principles in compliance to industry practices. The architecture is designed with a focus on scalability, high availability for the future expansion. Cubit is used where no user intervention is needed on UI like fetching data from the server, and Bloc is used where user pass some event into the UI eg. validating the username and passowrd. Followed a clean code architecture where repository directory contains all files that are responsible for network call, similarly bloc contains the files used to make that bolc work eg. bloc, state and event and similar for cubit directory for cubit and state. Further I used the reusable components wherever required.
 
 _________________________________________________________________________________
 
@@ -71,7 +71,7 @@ ________________________________________________________________________________
 
 _____________________________________________________________________
 
-My deepest appreciation goes to the Growthgenie team for their dedication and hard work in making this event possible. The dedication of each team member, from the organizers to the volunteers, was evident throughout the hackathon, and it contributed significantly to the positive and productive environment. I also want to express my heartfelt thanks to all the fellow participants who supported me throughout the hackathon. The collaborative spirit, brainstorming sessions, and shared knowledge were invaluable to my experience. Your encouragement and assistance were instrumental in helping me develop and refine my ideas. The Growthgenie Hackathon provided me with an invaluable learning opportunity and a platform to challenge myself and explore new ideas. I am incredibly grateful for the experience and the connections I made. I look forward to applying the knowledge and skills I gained to future endeavors and contributing to the entrepreneurial community. Thank you once again for making the Growthgenie Hackathon such a remarkable event. I am truly grateful for the opportunity to have been a part of it.
+                                                # THANK YOU!
 
 ______________________________________________________________________
 
