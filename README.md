@@ -38,15 +38,21 @@ _____________________________________________________________________________
 
 ## Solution Approach
 
-To tackle with the problem, I needed to group a team of like minded techies. I searched for the people in the hackathon participants list and invited members to the team. And finally came up with the group of 4 talents. We had a several meetings on what should be our approach to go with this prototype. Finally we came to the conclusion with HLD which adheres not only the solution to the problem but also the best approach on how we scale this prototype in the future. And keeping in mind all those obstacle we may face during the development, with the help of schema provided with this hackathon we workaround with the inputs we were given in the form of table and outputs to be delivered, out of our expertise.
-
-_______________________________________________________________________________
-
-Being a team leader of this hackathon, with the help of my team, my responsibility was to make our solutions is inline with the context. And you will love your work if people with positive and right mindsets work together. We thoroughly enjoyed this session, with no pressure and tension. After a first round selection, we often chat in a group, try to make fun discuss on the solutions and our achievements. Finally team came up with the solutions of backend in the form of api which i need to integrate with. Since Im a mobile developer, having knowledge of css, js, but to deliver a top notch user experience with basic css is next to impossible, since I was not pro tailwind guy. So I decided to go with flutter which allows me to develop cross platform application for web, mobile and desktop. I followed a minimalistic approach, with highly accepted state management framework in industry i.e Business Logic Component (Bloc)
-
-________________________________________________________________________________
-
 This application adheres to SOLID design principles in compliance to industry practices. The architecture is designed with a focus on scalability, high availability for the future expansion. Cubit is used where no user intervention is needed on UI like fetching data from the server, and Bloc is used where user pass some event into the UI eg. validating the username and passowrd. Followed a clean code architecture where repository directory contains all files that are responsible for network call, similarly bloc contains the files used to make that bolc work eg. bloc, state and event and similar for cubit directory for cubit and state. Further I used the reusable widgets for the components wherever I felt to reuse the widgets later on other classes.
+
+_________________________________________________________________________________
+
+## Application comprises of following flow:
+
+1. Login with email and password (For this prototype this is not functional. You may use any username and password). But it showcase how bloc can be used to validate the fields.
+2. Client selection screen contains top Investors who made most out of thier investments. At the bottom you need to enter the customer ID.
+3. Dashboard Screen contains
+   i.   Inner Grid: Where user see the balance of user individual investments eg. (Mutual Fund, Stocks etc)
+   ii.  Transaction: Where recent user transactions are displayed
+   iii. ROI: Where return on overall investments and individual investments are shown in pi chart.
+   iv.  Popular Investments count: Where top popular investments are shown in terms of count. Representing why the investment is so popular.
+   v.   Historical returns: Where previous days returns are shown
+   vi.  Tax assessements: Where tax assessment are shown for last fiscal year.
 
 __________________________________________________________________________________
 
