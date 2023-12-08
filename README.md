@@ -84,7 +84,7 @@ To tackle with the problem I needed to group a team of like minded techies. I se
 
 _______________________________________________________________________________
 
-Being a team leader of this hackathon, with the help of my team, my responsibility was to make our solutions vivid and transparent. And you will love your work if people with positive and right mindsets work together. We thoroughly enjoyed this session, with no pressure and tension. After a first round selection, we often chat in a group, try to make fun discuss on the solutions and our achievements. Finally team came up with the solutions of backend in the form of api which i need to integrate with. Since Im a mobile developer, having knowledge of css, js, but to deliver a top notch user experience with basic css is next to impossible, since I was not pro tailwind guy. So I decided to go with flutter which allows me to develop cross platform application for web, mobile and desktop. I followed a minimalistic approach, with highly accepted state management framework in industry i.e Business Logic Component (Bloc)
+Being a team leader of this hackathon, with the help of my team, my responsibility was to make our solutions is inline with the context. And you will love your work if people with positive and right mindsets work together. We thoroughly enjoyed this session, with no pressure and tension. After a first round selection, we often chat in a group, try to make fun discuss on the solutions and our achievements. Finally team came up with the solutions of backend in the form of api which i need to integrate with. Since Im a mobile developer, having knowledge of css, js, but to deliver a top notch user experience with basic css is next to impossible, since I was not pro tailwind guy. So I decided to go with flutter which allows me to develop cross platform application for web, mobile and desktop. I followed a minimalistic approach, with highly accepted state management framework in industry i.e Business Logic Component (Bloc)
 
 ________________________________________________________________________________
 
@@ -106,3 +106,7 @@ ________________________________________________________________________________
 10. run flutter run command to run the project.
 
 _____________________________________________________________________
+
+Screenshot
+
+![Screenshot 2023-12-03 at 9 17 37 PM](https://github.com/HackathonGrowthGenie/Clairvoyant-FrontEnd/assets/16430056/763e7e5c-db12-44bd-9109-b450009a40f1)
