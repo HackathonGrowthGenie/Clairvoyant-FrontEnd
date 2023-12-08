@@ -2,13 +2,9 @@
 
 --------------------------------------------------------
 
-This project is a prototype of GrowthGenie Hackathon. The challenge entails crafting a platform that provides a comprehensive view of users' financial journeys, from budgeting and investing to tax planning and retirement savings. With GrowthGenie, users could gain insights into their spending habits, identify investment opportunities, and develop personalized financial strategies tailored to their unique needs.
+This project is a frontend efforts made by Solution Team participated on GrowthGenie Hackathon. The challenge entails crafting a platform that provides a comprehensive view of users' financial journeys, from budgeting and investing to tax planning and retirement savings. With GrowthGenie, users could gain insights into their spending habits, identify investment opportunities, and develop personalized financial strategies tailored to their unique needs.
 
 _________________________________________________________
-
-Participants must have minimum 2 years of experience. Team size can be a maximum of 5 members. Some how we were 4 team members out of which 3 members were Java Developer and since I was also a team leader I decided to go with front end development. Multiple submissions were allowed, but only the last submitted entry will be considered.
-
-__________________________________________________________
 
 ## Problem Statement
 
@@ -38,49 +34,11 @@ Historical Returns: Offer a visualization of the total returns for the past six 
 
 Tax Assessment: Offer a visualization of the expected tax liability for the current assessment year based on the user's portfolio. Provide users with insights into their tax obligations.
 
-______________________________________________________________________
-
-This additional task aims to enhance the wealth management platform by providing valuable insights and tools to assist users in making informed investment decisions while also addressing their tax-related concerns and showcasing their portfolio's historical performance.
-
-## Evaluation Criteria: Hackathon participants will be evaluated based on the following criteria:
-
-1 Code Quality
-
-2 Presentation skills
-
-3 Data Processing
-
-4 Data Modeling
-
-5 Working prototype explanation
-
-6 High-level architecture (Bonus: if cloud (any cloud) services are used)
-
-7 User Interface experience
-
-8 Innovative and Market-promising application.
-
-9 Fault tolerance mechanism
-
-10 Bonus: if users can think of a few use cases that are not listed in the problem statement
-
-____________________________________________________________________________
-
-Create an interactive dashboard as part of the wealth management platform that provides insights from different use cases shared in the problem statement.
-
-Build data pipelines which provide analytical capabilities for the use cases shared in the problem statement.
-
-Snippet of the code submission which is highly efficient with optimized performance. Flow chart with design architecture
-
-Application/Solution source: should contain all the necessary source files.
-
-Presentation pptx : This should contain a description of what you have tried to build, what problem you are solving and why your Application/solution should be considered for the final round. Video showing the demo functionalities.
-
 _____________________________________________________________________________
 
 ## Solution Approach
 
-To tackle with the problem I needed to group a team of like minded techies. I searched for the people in the hackathon participants list and invited members to the team. And finally came up with the group of 4 talents. We had a several meetings on what should be our approach to go with this prototype. Finally we came to the conclusion with HLD which adheres not only the solution to the problem but also the best approach on how we scale this prototype in the future. And keeping in mind all those obstacle we may face during the development, with the help of schema provided with this hackathon we workaround with the inputs we were given in the form of table and outputs to be delivered, out of our expertise.
+To tackle with the problem, I needed to group a team of like minded techies. I searched for the people in the hackathon participants list and invited members to the team. And finally came up with the group of 4 talents. We had a several meetings on what should be our approach to go with this prototype. Finally we came to the conclusion with HLD which adheres not only the solution to the problem but also the best approach on how we scale this prototype in the future. And keeping in mind all those obstacle we may face during the development, with the help of schema provided with this hackathon we workaround with the inputs we were given in the form of table and outputs to be delivered, out of our expertise.
 
 _______________________________________________________________________________
 
