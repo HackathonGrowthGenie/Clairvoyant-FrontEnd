@@ -45,14 +45,22 @@ ________________________________________________________________________________
 ## Application comprises of following flow:
 
 1. Login with email and password (For this prototype this is not functional. You may use any username and password). But it showcase how bloc can be used to validate the fields.
-2. Client selection screen contains top Investors who made most out of thier investments. At the bottom you need to enter the customer ID.
-3. Dashboard Screen contains
-   i.   Inner Grid: Where user see the balance of user individual investments eg. (Mutual Fund, Stocks etc)
-   ii.  Transaction: Where recent user transactions are displayed
-   iii. ROI: Where return on overall investments and individual investments are shown in pi chart.
-   iv.  Popular Investments count: Where top popular investments are shown in terms of count. Representing why the investment is so popular.
-   v.   Historical returns: Where previous days returns are shown
-   vi.  Tax assessements: Where tax assessment are shown for last fiscal year.
+   
+2. Client selection screen contains top Investors who made most out of thier investments. At the bottom you need to enter the customerID.
+   
+3. Dashboard Screen contains the following:
+
+   - Inner Grid: Where user see the balance of user individual investments eg. (Mutual Fund, Stocks etc)
+     
+   - Transaction: Where recent user transactions are displayed
+     
+   - ROI: Where return on overall investments and individual investments are shown in pi chart.
+     
+   - Popular Investments count: Where top popular investments are shown in terms of count. Representing why the investment is so popular.
+     
+   - Historical returns: Where previous days returns are shown
+     
+   - Tax assessements: Where tax assessment are shown for last fiscal year.
 
 __________________________________________________________________________________
 
@@ -68,10 +76,6 @@ ________________________________________________________________________________
 8. running the flutter pub get command to download all the dependencies given on pubspec.yaml file
 9. Select your emulator. You can select google chrome for this project to run on your browser.
 10. run flutter run command to run the project.
-
-_____________________________________________________________________
-
-                                                # THANK YOU!
 
 ______________________________________________________________________
 
