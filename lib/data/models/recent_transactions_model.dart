@@ -2,7 +2,7 @@
     final int transactionID;
     final String accountID;
     final String transactionType;
-    final double amount;
+    final int amount;
     final DateTime transactionDate;
     final String transactionStatus;
     final String? remarks;
@@ -22,7 +22,7 @@
         transactionID: json['transactionID'] as int,
         accountID: json['accountID'] as String,
         transactionType: json['transactionType'] as String,
-        amount: json['amount'] as double,
+        amount: json['amount'] as int,
         transactionDate: DateTime.parse(json['transactionDate']),
         transactionStatus: json['transactionStatus'] as String,
         remarks: json['remarks'] as String?,
