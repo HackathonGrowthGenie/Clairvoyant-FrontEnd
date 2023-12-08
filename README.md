@@ -38,6 +38,8 @@ _____________________________________________________________________________
 
 ## Solution Approach
 
+- This application is developed using flutter and dart.
+
 - This application adheres to SOLID design principles in compliance to industry practices. 
 
 - The architecture is designed with a focus on scalability, high availability for the future expansion. 
