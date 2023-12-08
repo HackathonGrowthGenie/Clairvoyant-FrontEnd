@@ -109,9 +109,12 @@ _____________________________________________________________________
 
 My deepest appreciation goes to the Growthgenie team for their dedication and hard work in making this event possible. The dedication of each team member, from the organizers to the volunteers, was evident throughout the hackathon, and it contributed significantly to the positive and productive environment. I also want to express my heartfelt thanks to all the fellow participants who supported me throughout the hackathon. The collaborative spirit, brainstorming sessions, and shared knowledge were invaluable to my experience. Your encouragement and assistance were instrumental in helping me develop and refine my ideas. The Growthgenie Hackathon provided me with an invaluable learning opportunity and a platform to challenge myself and explore new ideas. I am incredibly grateful for the experience and the connections I made. I look forward to applying the knowledge and skills I gained to future endeavors and contributing to the entrepreneurial community. Thank you once again for making the Growthgenie Hackathon such a remarkable event. I am truly grateful for the opportunity to have been a part of it.
 
-Screenshot
+______________________________________________________________________
 
-![Screenshot 2023-12-08 at 11 26 14 AM](https://github.com/HackathonGrowthGenie/Clairvoyant-FrontEnd/assets/16430056/959af78a-2b0c-4f93-9a66-11d3b6792ce5)
+## Screenshot
+
+![Screenshot 2023-12-08 at 11 32 35 AM](https://github.com/HackathonGrowthGenie/Clairvoyant-FrontEnd/assets/16430056/dcc84312-5040-4a02-8133-cdff995697cf)
+
 
 
 
