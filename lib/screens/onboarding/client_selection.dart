@@ -48,7 +48,7 @@ class ClientSelection extends StatelessWidget {
                 ),
                 SizedBox(height: 40,),
                 Container(
-                    height: 130,
+                    height: MediaQuery.of(context).size.height*0.17,
                     width: 400,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),

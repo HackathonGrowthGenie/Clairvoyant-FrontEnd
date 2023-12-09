@@ -49,7 +49,7 @@ class MutualFunds {
   String? fundManger;
   String? fundType;
   double? nav;
-  int? investmentAmount;
+  double? investmentAmount;
   int? investmentDate;
 
   MutualFunds(

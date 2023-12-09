@@ -1,4 +1,5 @@
-2023/12/04-23:31:32.861 2a07 Reusing MANIFEST /private/var/folders/vn/7gcrvrzd5176hcdgbgdwxtnw0000gn/T/flutter_tools.lDhADw/flutter_tools_chrome_device.y3siwP/Default/Session Storage/MANIFEST-000001
-2023/12/04-23:31:32.861 2a07 Recovering log #4
-2023/12/04-23:31:32.862 2a07 Reusing old log /private/var/folders/vn/7gcrvrzd5176hcdgbgdwxtnw0000gn/T/flutter_tools.lDhADw/flutter_tools_chrome_device.y3siwP/Default/Session Storage/000004.log 
-2023/12/04-23:31:32.863 2a07 Delete type=0 #3
+2023/12/09-10:45:16.902 2e03 Reusing MANIFEST /private/var/folders/vn/7gcrvrzd5176hcdgbgdwxtnw0000gn/T/flutter_tools.YhyG5K/flutter_tools_chrome_device.siuDpM/Default/Session Storage/MANIFEST-000001
+2023/12/09-10:45:16.903 2e03 Recovering log #4
+2023/12/09-10:45:16.903 2e03 (ignoring error) /private/var/folders/vn/7gcrvrzd5176hcdgbgdwxtnw0000gn/T/flutter_tools.YhyG5K/flutter_tools_chrome_device.siuDpM/Default/Session Storage/000004.log: dropping 451 bytes; Corruption: checksum mismatch
+2023/12/09-10:45:16.904 2e03 Reusing old log /private/var/folders/vn/7gcrvrzd5176hcdgbgdwxtnw0000gn/T/flutter_tools.YhyG5K/flutter_tools_chrome_device.siuDpM/Default/Session Storage/000004.log 
+2023/12/09-10:45:16.905 2e03 Delete type=0 #3

@@ -1,14 +1,10 @@
-# Flutter clairvoyant hackathon Dashboard
+# Flutter GrowthGenie Clairvoyant Hackathon Dashboard
 
 --------------------------------------------------------
 
-This project is a prototype of GrowthGenie Hackathon. The challenge entails crafting a platform that provides a comprehensive view of users' financial journeys, from budgeting and investing to tax planning and retirement savings. With GrowthGenie, users could gain insights into their spending habits, identify investment opportunities, and develop personalized financial strategies tailored to their unique needs.
+This project is a frontend efforts made by Solution Team participated on GrowthGenie Hackathon. The challenge entails crafting a platform that provides a comprehensive view of users' financial journeys, from budgeting and investing to tax planning and retirement savings. With GrowthGenie, users could gain insights into their spending habits, identify investment opportunities, and develop personalized financial strategies tailored to their unique needs.
 
 _________________________________________________________
-
-Participants must have minimum 2 years of experience. Team size can be a maximum of 5 members. Some how we were 4 team members out of which 3 members were Java Developer and since I was also a team leader I decided to go with front end development. Multiple submissions were allowed, but only the last submitted entry will be considered.
-
-__________________________________________________________
 
 ## Problem Statement
 
@@ -38,58 +34,48 @@ Historical Returns: Offer a visualization of the total returns for the past six 
 
 Tax Assessment: Offer a visualization of the expected tax liability for the current assessment year based on the user's portfolio. Provide users with insights into their tax obligations.
 
-______________________________________________________________________
-
-This additional task aims to enhance the wealth management platform by providing valuable insights and tools to assist users in making informed investment decisions while also addressing their tax-related concerns and showcasing their portfolio's historical performance.
-
-## Evaluation Criteria: Hackathon participants will be evaluated based on the following criteria:
-
-1 Code Quality
-
-2 Presentation skills
-
-3 Data Processing
-
-4 Data Modeling
-
-5 Working prototype explanation
-
-6 High-level architecture (Bonus: if cloud (any cloud) services are used)
-
-7 User Interface experience
-
-8 Innovative and Market-promising application.
-
-9 Fault tolerance mechanism
-
-10 Bonus: if users can think of a few use cases that are not listed in the problem statement
-
-____________________________________________________________________________
-
-Create an interactive dashboard as part of the wealth management platform that provides insights from different use cases shared in the problem statement.
-
-Build data pipelines which provide analytical capabilities for the use cases shared in the problem statement.
-
-Snippet of the code submission which is highly efficient with optimized performance. Flow chart with design architecture
-
-Application/Solution source: should contain all the necessary source files.
-
-Presentation pptx : This should contain a description of what you have tried to build, what problem you are solving and why your Application/solution should be considered for the final round. Video showing the demo functionalities.
-
 _____________________________________________________________________________
 
 ## Solution Approach
 
-To tackle with the problem I needed to group a team of like minded techies. I searched for the people in the hackathon participants list and invited members to the team. And finally came up with the group of 4 talents. We had a several meetings on what should be our approach to go with this prototype. Finally we came to the conclusion with HLD which adheres not only the solution to the problem but also the best approach on how we scale this prototype in the future. And keeping in mind all those obstacle we may face during the development, with the help of schema provided with this hackathon we workaround with the inputs we were given in the form of table and outputs to be delivered, out of our expertise.
+- This application is developed using flutter and dart.
 
-_______________________________________________________________________________
+- This application adheres to SOLID design principles in compliance to industry practices.
 
-Being a team leader of this hackathon, with the help of my team, my responsibility was to make our solutions vivid and transparent. And you will love your work if people with positive and right mindsets work together. We thoroughly enjoyed this session, with no pressure and tension. After a first round selection, we often chat in a group, try to make fun discuss on the solutions and our achievements. Finally team came up with the solutions of backend in the form of api which i need to integrate with. Since Im a mobile developer, having knowledge of css, js, but to deliver a top notch user experience with basic css is next to impossible, since I was not pro tailwind guy. So I decided to go with flutter which allows me to develop cross platform application for web, mobile and desktop. I followed a minimalistic approach, with highly accepted state management framework in industry i.e Business Logic Component (Bloc)
+- The architecture is designed with a focus on scalability, high availability for the future expansion.
 
-________________________________________________________________________________
+- Cubit is used where no user intervention is needed on UI like fetching data from the server, and Bloc is used where user pass some event into the UI eg. validating the username and passowrd.
 
-This application adheres to SOLID design principles in compliance to industry practices. The architecture is designed with a focus on scalability, high availability for the future expansion. Cubit is used where no user intervention is needed on UI like fetching data from the server, and Bloc is used where user pass some event into the UI eg. validating the username and passowrd. Followed a clean code architecture where repository directory contains all files that are responsible for network call, similarly bloc contains the files used to make that bolc work eg. bloc, state and event and similar for cubit directory for cubit and state. Further I used the reusable widgets for the components wherever I felt to reuse the widgets later on other classes.
+- Followed a clean code architecture where repository directory contains all files that are responsible for network call, similarly bloc contains the files used to make that bolc work eg. bloc, state and event and similar for cubit directory for cubit and state.
 
+- Further I used the reusable components wherever required.
+
+- Only those specific apis are called which are required to render the screen. The beauty of bloc archetecture.
+
+- Here i did not use equatable because i did not need to compare between two states manually.
+
+- Here i used multiblocprovider to handle multiple blocs/cubits throughout the application.
+
+- I used fl_chart package to show the pi chart.
+
+- pretty_dio_logger to view the log from netowrk call and to handle the exception.
+
+- I followed minimalistic approach to develop this prototype for the best performance.
+
+_________________________________________________________________________________
+
+## Application comprises of following flow:
+
+1. Login with email and password (For this prototype this is not functional. You may use any username and password). But it showcase how bloc can be used to validate the fields.
+2. Client selection screen contains top Investors who made most out of thier investments. At the bottom you need to enter the customerID.
+3. Dashboard Screen contains the following:
+   - Inner Grid: Where user see the balance of user individual investments eg. (Mutual Fund, Stocks etc)
+   - Transaction: Where recent user transactions are displayed
+   - ROI: Where return on overall investments and individual fund investments are shown in pi chart.
+   - Popular Investments count: Where top popular investments are shown in terms of count. Representing why the investment is so popular.
+   - Historical returns: Where previous days returns are shown
+   - Tax assessements: Where tax assessment are shown for last fiscal year.
+4. All above screens are synced with local server. If you run this application without backend, this may cause an error.
 __________________________________________________________________________________
 
 ## How to Use?
@@ -105,4 +91,13 @@ ________________________________________________________________________________
 9. Select your emulator. You can select google chrome for this project to run on your browser.
 10. run flutter run command to run the project.
 
-_____________________________________________________________________
+______________________________________________________________________
+
+## Screenshot
+
+
+![Screenshot 2023-12-09 at 3 14 22 PM](https://github.com/HackathonGrowthGenie/Clairvoyant-FrontEnd/assets/16430056/6a3a5b27-c378-4996-be55-ffeb89fb5e11)
+
+![Screenshot 2023-12-09 at 3 15 32 PM](https://github.com/HackathonGrowthGenie/Clairvoyant-FrontEnd/assets/16430056/e4c66618-b2e6-4df9-8383-8d9e6d957421)
+
+![Screenshot 2023-12-09 at 3 17 55 PM](https://github.com/HackathonGrowthGenie/Clairvoyant-FrontEnd/assets/16430056/80161c93-a80d-40d0-8037-8bedd612db78)

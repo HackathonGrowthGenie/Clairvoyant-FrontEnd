@@ -1,7 +1,7 @@
 class AvailableBalanceModel {
-  int? mutualFunds;
-  int? stocks;
-  int? fixedDeposits;
+  double? mutualFunds;
+  double? stocks;
+  double? fixedDeposits;
 
   AvailableBalanceModel({this.mutualFunds, this.stocks, this.fixedDeposits});
 

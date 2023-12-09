@@ -42,13 +42,13 @@ class RecentFiles extends StatelessWidget {
                     // minWidth: 600,
                     columns: [
                       DataColumn(
-                        label: Text("Transaction"),
+                        label: Text("Transaction", overflow: TextOverflow.ellipsis),
                       ),
                       DataColumn(
-                        label: Text("Date and Time"),
+                        label: Text("Date and Time", overflow: TextOverflow.ellipsis),
                       ),
                       DataColumn(
-                        label: Text("Amount"),
+                        label: Text("Amount", overflow: TextOverflow.ellipsis),
                       ),
                     ],
                     rows: List.generate(
@@ -76,15 +76,12 @@ DataRow recentDataRow(List<RecentTransactionsModel> recentTransactions, int inde
       DataCell(
         Row(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-              child: Text(recentTransactions[index].transactionType.toString()),
-            ),
+            Text(recentTransactions[index].transactionType.toString(), overflow: TextOverflow.ellipsis),
           ],
         ),
       ),
-      DataCell(Text('${date.day.toString()} ${date.month.toString()} ${date.year.toString()} - ${date.hour}:${date.hour}')),
-      DataCell(Text('₹ ${recentTransactions[index].amount.toString()}')),
+      DataCell(Text('${date.day.toString()} ${date.month.toString()} ${date.year.toString()} - ${date.hour}:${date.hour}', overflow: TextOverflow.ellipsis)),
+      DataCell(Text('₹ ${recentTransactions[index].amount.toString()}', overflow: TextOverflow.ellipsis)),
     ],
   );
 }

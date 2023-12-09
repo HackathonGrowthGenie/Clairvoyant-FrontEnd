@@ -1,22 +1,17 @@
 import 'package:clairvoyant/data/models/historical_returns_model.dart';
-import 'package:clairvoyant/data/models/popularInvestment_model.dart';
-import 'package:clairvoyant/data/models/tax_calculation_model.dart';
-import 'package:clairvoyant/logic/cubits/performing_investment/performing_inv_cubit.dart';
-import 'package:clairvoyant/logic/cubits/performing_investment/performing_inv_state.dart';
-import 'package:clairvoyant/logic/cubits/popular_investment/popularInv_cubit.dart';
-import 'package:clairvoyant/logic/cubits/popular_investment/popularInv_state.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/historical_returns/historical_returns_cubit.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/historical_returns/historical_returns_state.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/tax_assessment/tax_assessment_cubit.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/tax_assessment/tax_assessment_state.dart';
-import 'package:clairvoyant/screens/onboarding/bloc/clientBloc/clientSelection_bloc.dart';
-import 'package:clairvoyant/screens/onboarding/bloc/clientBloc/clientSelection_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../data/models/topPerformingInvestment_model.dart';
 import '../../../utils/constants.dart';
-import '../../onboarding/bloc/clientBloc/clientSelection_event.dart';
+import '../cubits/performing_investment/performing_inv_cubit.dart';
+import '../cubits/performing_investment/performing_inv_state.dart';
+import '../cubits/popular_investment/popularInv_cubit.dart';
+import '../cubits/popular_investment/popularInv_state.dart';
 import 'chart.dart';
 import 'investment_legends.dart';
 
@@ -78,6 +73,8 @@ class _StorageDetailsState extends State<StorageDetails> {
                             return Container(
                               height: MediaQuery.of(context).size.height,
                               child: ListView.builder(
+                                primary: false,
+                                shrinkWrap: true,
                                 itemCount: state.customer.length,
                                 itemBuilder: (context, index) {
                                   final detail = state.customer[index];
@@ -87,6 +84,7 @@ class _StorageDetailsState extends State<StorageDetails> {
                                       Text('MUTUAL FUNDS',style: TextStyle(fontSize: 20),),
                                       SizedBox(height: 20,),
                                       ListView.builder(
+                                        primary: false,
                                         shrinkWrap: true,
                                         itemCount: detail.mutualFunds.length,
                                         itemBuilder: (context, index) {
@@ -180,15 +178,33 @@ class _StorageDetailsState extends State<StorageDetails> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "ROI Details",
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
+          Center(
+            child: Text(
+              "Return On Investments",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
           SizedBox(height: defaultPadding),
           Chart(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircleAvatar(backgroundColor: primaryColor, radius: 7,),
+              SizedBox(width: 5,),
+              Text('Stocks'),
+              SizedBox(width: 5,),
+              CircleAvatar(backgroundColor: Color(0xFF26E5FF), radius: 7,),
+              SizedBox(width: 5,),
+              Text('FD'),
+              SizedBox(width: 5,),
+              CircleAvatar(backgroundColor: Color(0xFFEE2727), radius: 7,),
+              SizedBox(width: 5,),
+              Text('MF'),
+            ],
+          ),
           InkWell(
             onTap: () {
               _popularInvModal(context, width);
@@ -241,6 +257,8 @@ class _StorageDetailsState extends State<StorageDetails> {
                 padding: const EdgeInsets.all(20.0),
                 child: Center(
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Align(
                         alignment: Alignment.centerRight,
@@ -265,14 +283,16 @@ class _StorageDetailsState extends State<StorageDetails> {
                         'assets/images/clair-logo.png',
                         fit: BoxFit.cover,
                       ),
-                      Text("TOP PERFORMING INVESTMENTS", style: TextStyle(fontSize: 24),),
+                      Center(child: Text("TOP PERFORMING INVESTMENTS",
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(fontSize: 24),)),
                       SizedBox(height: 20,),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                        Text("MUTUAL FUNDS",style: TextStyle(fontSize: 16),),
-                        Text("FIX DEPOSITS",style: TextStyle(fontSize: 16),),
-                        Text("STOCKS",style: TextStyle(fontSize: 16),)
+                          Expanded(child: Text("MUTUAL FUNDS", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),),
+                          Expanded(child: Text("FIX DEPOSITS", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),),
+                        Expanded(child: Text("STOCKS", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),))
                       ],),
                       BlocConsumer<PerformingInvCubit, PerfermingInvestState>(
                         listener: (context, state) {
@@ -346,10 +366,18 @@ class _StorageDetailsState extends State<StorageDetails> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Text("ID",style: TextStyle(fontSize: 16),),
-                          Text("NAME",style: TextStyle(fontSize: 16),),
-                          Text("DATE - TIME",style: TextStyle(fontSize: 16),),
-                          Text("RETURN VALUE",style: TextStyle(fontSize: 16),)
+                          Expanded(child: Text("ID",
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(fontSize: 16),)),
+                          Expanded(child: Text("NAME",
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(fontSize: 16),)),
+                          Expanded(child: Text("DATE - TIME",
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(fontSize: 16),)),
+                          Expanded(child: Text("RETURN VALUE",
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(fontSize: 16),))
                         ],),
                       BlocConsumer<HistoricalReturnsCubit, HistoricalReturnState>(
                         listener: (context, state) {
@@ -453,10 +481,10 @@ class _StorageDetailsState extends State<StorageDetails> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text('${list[index].customerId.toString()}'),
-                  Text('${list[index].customerName.toString()}'),
-                  Text('${list[index].currentDate?.split('T')[0]} ${list[index].currentDate?.split('T')[1].split('.')[0]}'),
-                  Text('${list[index].returnValue.toString()}'),
+                  Expanded(child: Text('${list[index].customerId.toString()}',overflow: TextOverflow.ellipsis,)),
+                  Expanded(child: Text('${list[index].customerName.toString()}', overflow: TextOverflow.ellipsis,)),
+                  Expanded(child: Text('${list[index].currentDate?.split('T')[0]} ${list[index].currentDate?.split('T')[1].split('.')[0]}', overflow: TextOverflow.ellipsis,)),
+                  Expanded(child: Text('${list[index].returnValue.toString()}', overflow: TextOverflow.ellipsis,)),
                 ],
               ),
             ),

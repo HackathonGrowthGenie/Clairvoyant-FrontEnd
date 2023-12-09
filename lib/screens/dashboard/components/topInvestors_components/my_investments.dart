@@ -14,12 +14,8 @@ class InvestorsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: secondaryColor,
-        borderRadius: BorderRadius.all(Radius.circular(100)),
-      ),
+    return CircleAvatar(
+      backgroundColor: secondaryColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -33,6 +29,7 @@ class InvestorsCard extends StatelessWidget {
           ),
           Text(
             '${info.investmentType!} - ${info.returns}%',
+              overflow: TextOverflow.ellipsis,
             style: TextStyle(fontSize: 14, color: Colors.grey)
           ),
           Text(

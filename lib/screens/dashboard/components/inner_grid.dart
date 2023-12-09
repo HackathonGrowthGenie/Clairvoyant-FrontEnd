@@ -99,7 +99,7 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
                       curve: Curves.easeInOut,
                       transform: Matrix4.translationValues(
                           startAnim ? 0 : screenWidth, 0, 0),
-                      padding: EdgeInsets.all(16),
+                      padding: EdgeInsets.all(8),
                       decoration: BoxDecoration(
                         color: secondaryColor,
                         borderRadius: BorderRadius.all(Radius.circular(16)),
@@ -130,6 +130,7 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
                           ),
                           SizedBox(height: 5,),
                           Text('₹ ${state.customer.first.stocks.toString()}',
+                              overflow: TextOverflow.ellipsis,
                               style:
                                   TextStyle(fontSize: 14, color: Colors.white)),
                         ],
@@ -144,7 +145,7 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
                       curve: Curves.easeInOut,
                       transform: Matrix4.translationValues(
                           startAnim ? 0 : screenWidth, 0, 0),
-                      padding: EdgeInsets.all(16),
+                      padding: EdgeInsets.all(8),
                       decoration: BoxDecoration(
                         color: secondaryColor,
                         borderRadius: BorderRadius.all(Radius.circular(16)),
@@ -189,7 +190,7 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
                       curve: Curves.easeInOut,
                       transform: Matrix4.translationValues(
                           startAnim ? 0 : screenWidth, 0, 0),
-                      padding: EdgeInsets.all(16),
+                      padding: EdgeInsets.all(8),
                       decoration: BoxDecoration(
                         color: secondaryColor,
                         borderRadius: BorderRadius.all(Radius.circular(16)),

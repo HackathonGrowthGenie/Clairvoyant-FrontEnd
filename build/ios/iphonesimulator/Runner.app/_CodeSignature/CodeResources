@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		RZ7MPN0bEBKBzrnq81zQSrgRV24=
+		BctgQjAbfoHRgfRSdtz0qn4rv7o=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		5n14aM81iJwW5x41mW99m0f12LE=
+		wMDBOHOTr95JV3LS866Bpcqn3dU=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		seNTiHVf7Q3pf86Jc+p7znhFmSc=
+		chm00iGsOkYax9vvqxMUXmgeBQs=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/clair-logo.png</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		LDxUnfLHlp8XGwmTPJ/cpJkQsCM=
+		I4j36haVbQSxNYVmoxqgU0Qyu0c=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -204,6 +204,18 @@
 		<data>
 		4O92aCbl5mri7dIfSgf7HcVpPog=
 		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/Info.plist</key>
+		<data>
+		swFyNjn8Mc/STlUOKvvieWbf2V0=
+		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/_CodeSignature/CodeResources</key>
+		<data>
+		phk+JCPwBugtdzAoN68B2WUtTfs=
+		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation</key>
+		<data>
+		qkJuLL9gSxBKhHdKawYMg01ftbo=
+		</data>
 		<key>Info.plist</key>
 		<data>
 		Xyd/N+ButKl4bx4qFfcWj0+Eyk0=
@@ -289,7 +301,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FDEFsiZ/s575m+XOowByaFGk1sVbp0gGuD+3Wb5UzLg=
+			tMovSqnvcCmGvBjirzrKFhXcNUXv1GbggGFTgnF3m38=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -303,7 +315,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mUkY5EsWi7STU4td5zYREs63z/bsHVHrjJEnhVl8jcU=
+			ReBsO5WiHGu2e7wOsOHdH9/9cBFGoNtWkVCyTmNYjWM=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
@@ -331,7 +343,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dfLDk03a1gPmawZ0nAle5EPVc+R87bsurs4Wgo+czE0=
+			oCfbnJ4eWnCaV+Ct+SFpRwA5UdyIfE6TCVgu+LAkmfY=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/clair-logo.png</key>
@@ -373,7 +385,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qUrzlcCJfMRnX8IHr3/8ndyzR2qYSnrRjuLBLAXJf/U=
+			oHgIQbV8vMPyoZrYql5dGgZSYBSKpX0wVNx66qxeGOk=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -563,6 +575,27 @@
 			<key>hash2</key>
 			<data>
 			ej7p7sc9JkpImzM8bYiWdAk+2X9lt9rAR/rqCSwJcQ4=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zWjmAetLUZ06C+jpVErZDJYYm2x8ggnbybd5EKla3tQ=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			QYJeWVjoUjsB1u5kHwjVwC2DNF7hsBijxBOlA/kSfzU=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			qGerTBMCbQbp2bEV792ln1m1+T1i0Rqc8oKwWSGXu/w=
 			</data>
 		</dict>
 	</dict>
