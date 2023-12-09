@@ -48,19 +48,19 @@ _____________________________________________________________________________
 
 - Followed a clean code architecture where repository directory contains all files that are responsible for network call, similarly bloc contains the files used to make that bolc work eg. bloc, state and event and similar for cubit directory for cubit and state.
 
-- Further I used the reusable components wherever required.
+- Further we used the reusable components wherever required.
 
 - Only those specific apis are called which are required to render the screen. The beauty of bloc archetecture.
 
-- Here i did not use equatable because i did not need to compare between two states manually.
+- Here we did not use equatable because we did not need to compare between two states manually.
 
-- Here i used multiblocprovider to handle multiple blocs/cubits throughout the application.
+- Here we used multiblocprovider to handle multiple blocs/cubits throughout the application.
 
-- I used fl_chart package to show the pi chart.
+- We used fl_chart package to show the pi chart.
 
-- pretty_dio_logger to view the log from netowrk call and to handle the exception.
+- We used pretty_dio_logger to view the log from netowrk call and to handle the exception.
 
-- I followed minimalistic approach to develop this prototype for the best performance.
+- We followed minimalistic approach to develop this prototype for the best performance.
 
 _________________________________________________________________________________
 
