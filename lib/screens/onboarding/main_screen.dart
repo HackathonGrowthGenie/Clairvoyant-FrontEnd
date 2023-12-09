@@ -1,11 +1,7 @@
-import 'package:clairvoyant/utils/constants.dart';
-import 'package:clairvoyant/controllers/MenuAppController.dart';
 import 'package:clairvoyant/utils/responsive.dart';
 import 'package:clairvoyant/screens/dashboard/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
-
 import 'components/side_menu.dart';
 
 class MainScreen extends StatelessWidget {

@@ -238,7 +238,7 @@ class _StorageDetailsState extends State<StorageDetails> {
             },
             child: MyInvestmentLegends(
               title: "Tax Assessment",
-              numOfTransactions: 2,
+              numOfTransactions: 1,
             ),
           ),
         ],

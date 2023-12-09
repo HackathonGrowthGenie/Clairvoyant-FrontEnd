@@ -1,10 +1,10 @@
-import 'package:clairvoyant/logic/cubits/top_investor/top_investor_cubit.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/available_balance_cubit/availablebal_cubit.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/historical_returns/historical_returns_cubit.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/performing_investment/performing_inv_cubit.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/popular_investment/popularInv_cubit.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/roi_cubit/roi_cubit.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/tax_assessment/tax_assessment_cubit.dart';
+import 'package:clairvoyant/screens/dashboard/cubits/top_investor/top_investor_cubit.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/transaction_cubit/transaction_cubit.dart';
 import 'package:clairvoyant/screens/onboarding/bloc/clientBloc/clientSelection_bloc.dart';
 import 'package:clairvoyant/utils/constants.dart';
@@ -18,7 +18,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(

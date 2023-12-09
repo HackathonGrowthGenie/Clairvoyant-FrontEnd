@@ -3,9 +3,9 @@ import 'package:clairvoyant/utils/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../logic/cubits/top_investor/top_investor_cubit.dart';
-import '../../../../logic/cubits/top_investor/top_investor_state.dart';
 import '../../../../utils/constants.dart';
+import '../../cubits/top_investor/top_investor_cubit.dart';
+import '../../cubits/top_investor/top_investor_state.dart';
 import '../inner_grid.dart';
 import 'my_investments.dart';
 

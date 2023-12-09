@@ -38,7 +38,7 @@ _____________________________________________________________________________
 
 ## Solution Approach
 
-- This application is developed using flutter and dart.
+- This application is developed using flutter and dart and compatible with browser, ios and android devices.
 
 - This application adheres to SOLID design principles in compliance to industry practices.
 
@@ -48,19 +48,19 @@ _____________________________________________________________________________
 
 - Followed a clean code architecture where repository directory contains all files that are responsible for network call, similarly bloc contains the files used to make that bolc work eg. bloc, state and event and similar for cubit directory for cubit and state.
 
-- Further I used the reusable components wherever required.
+- Further we used the reusable components wherever required.
 
 - Only those specific apis are called which are required to render the screen. The beauty of bloc archetecture.
 
-- Here i did not use equatable because i did not need to compare between two states manually.
+- Here we did not use equatable because we did not need to compare between two states manually.
 
-- Here i used multiblocprovider to handle multiple blocs/cubits throughout the application.
+- Here we used multiblocprovider to handle multiple blocs/cubits throughout the application.
 
-- I used fl_chart package to show the pi chart.
+- We used fl_chart package to show the pi chart.
 
-- pretty_dio_logger to view the log from netowrk call and to handle the exception.
+- We used pretty_dio_logger to view the log from netowrk call and to handle the exception.
 
-- I followed minimalistic approach to develop this prototype for the best performance.
+- We followed minimalistic approach to develop this prototype for the best performance.
 
 _________________________________________________________________________________
 
@@ -75,7 +75,7 @@ ________________________________________________________________________________
    - Popular Investments count: Where top popular investments are shown in terms of count. Representing why the investment is so popular.
    - Historical returns: Where previous days returns are shown
    - Tax assessements: Where tax assessment are shown for last fiscal year.
-4. All above screens are synced with local server. If you run this application without backend, this may cause an error.
+4. All above screens are synced with local server endpoints. If you run this application without backend, this may cause an error.
 __________________________________________________________________________________
 
 ## How to Use?
@@ -83,7 +83,7 @@ ________________________________________________________________________________
 1. Create a database named "growthgenie"
 2. import the Schema provided for this hackathon into the database. which is also provided inside assets directlory of this repository.
 3. Clone the Java project from https://github.com/kmrvivek/HackathonGrowthGenie/tree/vivek,
-4. Run this project into your local environment using your preferred IDE. I used Intellij Idea.
+4. Run this project into your local environment using your preferred IDE. We used Intellij Idea.
 5. Make sure your local server is listening to port 8080,
 6. Clone this flutter repository into your local machine
 7. Set your environment to make flutter project to run. Run flutter doctor to diagnose if anything missing.

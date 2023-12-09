@@ -1,9 +1,9 @@
-import 'package:clairvoyant/logic/cubits/top_investor/top_investor_state.dart';
+import 'package:clairvoyant/screens/dashboard/cubits/top_investor/top_investor_state.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../data/models/topInvestors_model.dart';
-import '../../../data/repository/PostRepository.dart';
+import '../../../../data/models/topInvestors_model.dart';
+import '../../../../data/repository/PostRepository.dart';
 
 class TopInvestCubit extends Cubit<TopInvestorState>{
   TopInvestCubit() : super( PostLoadingState() ){
