@@ -71,7 +71,7 @@ ________________________________________________________________________________
 3. Dashboard Screen contains the following:
    - Inner Grid: Where user see the balance of user individual investments eg. (Mutual Fund, Stocks etc)
    - Transaction: Where current user transactions are displayed
-   - ROI: Where percentage return on overall investments and on each fund investments are shown on pi chart.
+   - ROI: Where percentage return on each fund investments and on overall investments are shown on pi chart.
    - Popular Investments count: Where top popular investments are shown in terms of count. Representing why the investment is so popular.
    - Historical returns: Where previous days returns are shown
    - Tax assessements: Where tax assessment are shown for last fiscal year.
