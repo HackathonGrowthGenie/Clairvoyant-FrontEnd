@@ -85,7 +85,7 @@ ________________________________________________________________________________
 3. Clone the Java project from https://github.com/kmrvivek/HackathonGrowthGenie/tree/vivek,
 4. Run this project into your local environment using your preferred IDE. We used Intellij Idea.
 5. Make sure your local server is listening to port 8080,
-6. Clone this flutter repository into your local machine
+6. Clone this repository into your local machine
 7. Set your environment to make flutter project to run. Run flutter doctor command to diagnose if anything missing.
 8. Run the flutter pub get command to download all the dependencies given on pubspec.yaml file
 9. Select your emulator. You can select google chrome for this project to run on your browser.
