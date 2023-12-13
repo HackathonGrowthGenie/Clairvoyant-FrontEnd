@@ -38,7 +38,7 @@ _____________________________________________________________________________
 
 ## Solution Approach
 
-- This application is developed using flutter and dart and compatible with browser, ios and android devices.
+- This Solution is developed using flutter and dart and compatible with browser, ios and android devices.
 
 - This application adheres to SOLID design principles in compliance to industry practices.
 
@@ -70,8 +70,8 @@ ________________________________________________________________________________
 2. Client selection screen contains top Investors who made most out of thier investments. At the bottom you need to enter the customerID.
 3. Dashboard Screen contains the following:
    - Inner Grid: Where user see the balance of user individual investments eg. (Mutual Fund, Stocks etc)
-   - Transaction: Where recent user transactions are displayed
-   - ROI: Where return on overall investments and individual fund investments are shown in pi chart.
+   - Transaction: Where current user transactions are displayed
+   - ROI: Where percentage return on each fund investments and on overall investments are shown on pi chart.
    - Popular Investments count: Where top popular investments are shown in terms of count. Representing why the investment is so popular.
    - Historical returns: Where previous days returns are shown
    - Tax assessements: Where tax assessment are shown for last fiscal year.
@@ -85,11 +85,11 @@ ________________________________________________________________________________
 3. Clone the Java project from https://github.com/kmrvivek/HackathonGrowthGenie/tree/vivek,
 4. Run this project into your local environment using your preferred IDE. We used Intellij Idea.
 5. Make sure your local server is listening to port 8080,
-6. Clone this flutter repository into your local machine
-7. Set your environment to make flutter project to run. Run flutter doctor to diagnose if anything missing.
-8. running the flutter pub get command to download all the dependencies given on pubspec.yaml file
+6. Clone this repository into your local machine
+7. Set your environment to make flutter project to run. Run flutter doctor command to diagnose if anything missing.
+8. Run the flutter pub get command to download all the dependencies given on pubspec.yaml file
 9. Select your emulator. You can select google chrome for this project to run on your browser.
-10. run flutter run command to run the project.
+10. Enter flutter run command to compile and run the project.
 
 ______________________________________________________________________
 
