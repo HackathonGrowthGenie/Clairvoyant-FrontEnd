@@ -71,10 +71,10 @@ class _StorageDetailsState extends State<StorageDetails> {
                         builder: (context, state) {
                           if(state is PopularInvLoadedState){
                             return Container(
-                              height: MediaQuery.of(context).size.height,
                               child: ListView.builder(
-                                primary: false,
+                                physics: NeverScrollableScrollPhysics(),
                                 shrinkWrap: true,
+                                primary: false,
                                 itemCount: state.customer.length,
                                 itemBuilder: (context, index) {
                                   final detail = state.customer[index];
@@ -84,6 +84,7 @@ class _StorageDetailsState extends State<StorageDetails> {
                                       Text('MUTUAL FUNDS',style: TextStyle(fontSize: 20),),
                                       SizedBox(height: 20,),
                                       ListView.builder(
+                                        physics: NeverScrollableScrollPhysics(),
                                         primary: false,
                                         shrinkWrap: true,
                                         itemCount: detail.mutualFunds.length,
@@ -107,7 +108,9 @@ class _StorageDetailsState extends State<StorageDetails> {
                                       Text('Stocks',style: TextStyle(fontSize: 20),),
                                       SizedBox(height: 20,),
                                       ListView.builder(
+                                        physics: NeverScrollableScrollPhysics(),
                                         shrinkWrap: true,
+                                        primary: false,
                                         itemCount: detail.stocks.length,
                                         itemBuilder: (context, index) {
                                           final stockName = detail.stocks.keys.elementAt(index);
@@ -129,7 +132,9 @@ class _StorageDetailsState extends State<StorageDetails> {
                                       Text('Fixed Deposits',style: TextStyle(fontSize: 20),),
                                       SizedBox(height: 20,),
                                       ListView.builder(
+                                        physics: NeverScrollableScrollPhysics(),
                                         shrinkWrap: true,
+                                        primary: false,
                                         itemCount: detail.fixedDeposits.length,
                                         itemBuilder: (context, index) {
                                           final depositOption = detail.fixedDeposits.keys.elementAt(index);

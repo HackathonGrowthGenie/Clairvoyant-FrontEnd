@@ -62,11 +62,6 @@ class PopularInvestment{
       List list = [];
       list.add(postMaps);
       return  list.map((i) => PopularInvestmentModel.fromJson(i)).toList();
-
-      // return (json.decode(response.data) as List)
-      //      .map((i) => PopularInvestmentModel.fromJson(i))
-      //      .toList();
-
     }
     catch(ex){
       throw ex;
@@ -99,10 +94,6 @@ class HistoricalReturn{
       Response response = await api.sendRequest.get("/investmentAccount/historical/$clientId");
       List<dynamic> postMaps = response.data;
       return  postMaps.map((i) => HistoricalReturnsModel.fromJson(i)).toList();
-
-      // Response response = await api.sendRequest.get("/investmentAccount/historical/$clientId");
-      // final postMaps = response.data;
-      // return  postMaps.map((i) => HistoricalReturnsModel.fromJson(i)).toList();
     }
     catch(ex){
       throw ex;

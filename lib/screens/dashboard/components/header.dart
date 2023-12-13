@@ -1,8 +1,12 @@
 import 'package:clairvoyant/data/models/post_model.dart';
+import 'package:clairvoyant/screens/onboarding/main_screen.dart';
+import 'package:clairvoyant/screens/onboarding/splash.dart';
 import 'package:clairvoyant/utils/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../../utils/constants.dart';
+import '../../onboarding/client_selection.dart';
 
 class Header extends StatelessWidget {
   const Header(this.customer);
@@ -31,10 +35,16 @@ class Header extends StatelessWidget {
   }
 }
 
-class ProfileCard extends StatelessWidget {
+class ProfileCard extends StatefulWidget {
   const ProfileCard(this.customer);
   final List<CustomerModel> customer;
 
+  @override
+  State<ProfileCard> createState() => _ProfileCardState();
+}
+
+class _ProfileCardState extends State<ProfileCard> {
+  bool userLogout = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -50,54 +60,68 @@ class ProfileCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          (customer.first.gender.toString()) == "F" ?
-          Image.asset("assets/images/profile_pic.png"):
-          Image.asset("assets/images/profile_man_pic.png"),
+          (widget.customer.first.gender.toString()) == "F" ?
+    InkWell(
+        onTap: (){
+          setState(() {
+            userLogout = !userLogout;
+          });
+        },
+        child: Image.asset("assets/images/profile_pic.png")
+    ):
+          InkWell(
+              onTap: (){
+                setState(() {
+                  userLogout = !userLogout;
+                });
+              },
+              child: Image.asset("assets/images/profile_man_pic.png")),
           SizedBox(width: 15,),
           // Text("Welcome ${customer.first.firstName}"),
           // if (!Responsive.isMobile(context))
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
-              child: Text("Welcome ${customer.first.firstName}"),
+            userLogout?
+            InkWell(
+              onTap: () async {
+                final SharedPreferences prefs = await SharedPreferences.getInstance();
+                await prefs.clear();
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => Splash(),
+                  ),
+                );
+              },
+              child: Row(
+                children: [
+                  Padding(
+                    padding:
+                    const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+                    child: Text("Logout"),
+                  ),
+                  Icon(Icons.power_settings_new, color: Colors.grey,),
+                ],
+              ),
+            ):
+            InkWell(
+              onTap: (){
+                setState(() {
+                  userLogout = !userLogout;
+                });
+              },
+              child: Row(
+                children: [
+                  Padding(
+                    padding:
+                    const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+                    child: Text("Welcome ${widget.customer.first.firstName}"),
+                  ),
+                  Icon(Icons.keyboard_double_arrow_down, color: Colors.grey,),
+                ],
+              ),
             ),
-          // Icon(Icons.keyboard_arrow_down),
+
         ],
       )
 
-    );
-  }
-}
-
-class SearchField extends StatelessWidget {
-  const SearchField({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      decoration: InputDecoration(
-        hintText: "Search",
-        fillColor: secondaryColor,
-        filled: true,
-        border: OutlineInputBorder(
-          borderSide: BorderSide.none,
-          borderRadius: const BorderRadius.all(Radius.circular(10)),
-        ),
-        suffixIcon: InkWell(
-          onTap: () {},
-          child: Container(
-            padding: EdgeInsets.all(defaultPadding * 0.75),
-            margin: EdgeInsets.symmetric(horizontal: defaultPadding / 2),
-            decoration: BoxDecoration(
-              color: primaryColor,
-              borderRadius: const BorderRadius.all(Radius.circular(10)),
-            ),
-            child: SvgPicture.asset("assets/icons/Search.svg"),
-          ),
-        ),
-      ),
     );
   }
 }
