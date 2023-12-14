@@ -63,7 +63,7 @@ class Chart extends StatelessWidget {
               children: [
                 SizedBox(height: defaultPadding),
                 Text(
-                  totalValueInPercent.toString(),
+                  '${totalValueInPercent.toStringAsFixed(2)}%' ,
                   style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.w600,

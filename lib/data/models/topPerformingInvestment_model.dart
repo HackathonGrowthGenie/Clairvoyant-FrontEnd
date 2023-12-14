@@ -50,7 +50,7 @@ class MutualFunds {
   String? fundManger;
   String? fundType;
   double? nav;
-  int? investmentAmount;
+  double? investmentAmount;
   int? investmentDate;
 
   MutualFunds(
@@ -116,11 +116,11 @@ class Stocks {
 class FixedDeposits {
   String? fixedDepositId;
   String? investmentAccountId;
-  int? principalAmount;
+  double? principalAmount;
   double? interestRate;
   int? maturityRate;
   String? interestPaymentFrequency;
-  int? maturityAmount;
+  double? maturityAmount;
 
   FixedDeposits(
       {this.fixedDepositId,

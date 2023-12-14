@@ -81,7 +81,7 @@ class _StorageDetailsState extends State<StorageDetails> {
                                   return Column(
                                     children: [
                                       SizedBox(height: 20,),
-                                      Text('MUTUAL FUNDS COUNT',style: TextStyle(fontSize: 20),),
+                                      Text('MUTUAL FUNDS USERS COUNT',style: TextStyle(fontSize: 20),),
                                       SizedBox(height: 20,),
                                       ListView.builder(
                                         physics: NeverScrollableScrollPhysics(),
@@ -105,7 +105,7 @@ class _StorageDetailsState extends State<StorageDetails> {
                                         },
                                       ),
                                       SizedBox(height: 20,),
-                                      Text('STOCKS COUNT',style: TextStyle(fontSize: 20),),
+                                      Text('STOCKS USERS COUNT',style: TextStyle(fontSize: 20),),
                                       SizedBox(height: 20,),
                                       ListView.builder(
                                         physics: NeverScrollableScrollPhysics(),
@@ -129,7 +129,7 @@ class _StorageDetailsState extends State<StorageDetails> {
                                         },
                                       ),
                                       SizedBox(height: 20,),
-                                      Text('FIXED DEPOSITS COUNTS',style: TextStyle(fontSize: 20),),
+                                      Text('FIXED DEPOSITS USERS COUNTS',style: TextStyle(fontSize: 20),),
                                       SizedBox(height: 20,),
                                       ListView.builder(
                                         physics: NeverScrollableScrollPhysics(),
@@ -295,7 +295,7 @@ class _StorageDetailsState extends State<StorageDetails> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Expanded(child: Text("MUTUAL FUNDS - NAV", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),),
+                          Expanded(child: Text("MUTUAL FUNDS - ABS RETURN % - 5 YRS", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),),
                           Expanded(child: Text("FIX DEPOSITS - RETURN %", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),),
                         Expanded(child: Text("STOCKS - RETURN %", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),))
                       ],),
@@ -456,7 +456,7 @@ class _StorageDetailsState extends State<StorageDetails> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(child: Text('${list.first.mutualFunds![index].fundName.toString()} - ${list.first.mutualFunds![index].nav.toString()}')),
+                Expanded(child: Text('${list.first.mutualFunds![index].fundName.toString()} - ${list.first.mutualFunds![index].nav.toString()} %')),
                 Expanded(child: Text('${list.first.fixedDeposits![index].investmentAccountId.toString()} - ${list.first.fixedDeposits![index].interestRate.toString()} %')),
                 Expanded(child: Text('${list.first.stocks![index].stockName.toString()} - ${list.first.stocks![index].returns.toString().split('.')[0]} %')),
               ],
@@ -489,7 +489,7 @@ class _StorageDetailsState extends State<StorageDetails> {
                   Expanded(child: Text('${list[index].customerId.toString()}',overflow: TextOverflow.ellipsis,)),
                   Expanded(child: Text('${list[index].customerName.toString()}', overflow: TextOverflow.ellipsis,)),
                   Expanded(child: Text('${list[index].currentDate?.split('T')[0]} ${list[index].currentDate?.split('T')[1].split('.')[0]}', overflow: TextOverflow.ellipsis,)),
-                  Expanded(child: Text('${list[index].returnValue.toString()}', overflow: TextOverflow.ellipsis,)),
+                  Expanded(child: Text('${list[index].returnValue.toString()} %', overflow: TextOverflow.ellipsis,)),
                 ],
               ),
             ),
