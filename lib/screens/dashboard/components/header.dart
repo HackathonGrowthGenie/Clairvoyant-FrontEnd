@@ -84,10 +84,10 @@ class _ProfileCardState extends State<ProfileCard> {
               onTap: () async {
                 final SharedPreferences prefs = await SharedPreferences.getInstance();
                 await prefs.clear();
-                Navigator.of(context).pushReplacement(
+                Navigator.of(context).pushAndRemoveUntil(
                   MaterialPageRoute(
                     builder: (context) => Splash(),
-                  ),
+                  ), (Route<dynamic> route) => false
                 );
               },
               child: Row(

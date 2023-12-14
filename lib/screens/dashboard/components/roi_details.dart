@@ -81,7 +81,7 @@ class _StorageDetailsState extends State<StorageDetails> {
                                   return Column(
                                     children: [
                                       SizedBox(height: 20,),
-                                      Text('MUTUAL FUNDS',style: TextStyle(fontSize: 20),),
+                                      Text('MUTUAL FUNDS COUNT',style: TextStyle(fontSize: 20),),
                                       SizedBox(height: 20,),
                                       ListView.builder(
                                         physics: NeverScrollableScrollPhysics(),
@@ -105,7 +105,7 @@ class _StorageDetailsState extends State<StorageDetails> {
                                         },
                                       ),
                                       SizedBox(height: 20,),
-                                      Text('Stocks',style: TextStyle(fontSize: 20),),
+                                      Text('STOCKS COUNT',style: TextStyle(fontSize: 20),),
                                       SizedBox(height: 20,),
                                       ListView.builder(
                                         physics: NeverScrollableScrollPhysics(),
@@ -129,7 +129,7 @@ class _StorageDetailsState extends State<StorageDetails> {
                                         },
                                       ),
                                       SizedBox(height: 20,),
-                                      Text('Fixed Deposits',style: TextStyle(fontSize: 20),),
+                                      Text('FIXED DEPOSITS COUNTS',style: TextStyle(fontSize: 20),),
                                       SizedBox(height: 20,),
                                       ListView.builder(
                                         physics: NeverScrollableScrollPhysics(),
@@ -295,9 +295,9 @@ class _StorageDetailsState extends State<StorageDetails> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Expanded(child: Text("MUTUAL FUNDS", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),),
-                          Expanded(child: Text("FIX DEPOSITS", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),),
-                        Expanded(child: Text("STOCKS", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),))
+                          Expanded(child: Text("MUTUAL FUNDS - NAV", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),),
+                          Expanded(child: Text("FIX DEPOSITS - RETURN %", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),),
+                        Expanded(child: Text("STOCKS - RETURN %", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),))
                       ],),
                       BlocConsumer<PerformingInvCubit, PerfermingInvestState>(
                         listener: (context, state) {
@@ -456,9 +456,9 @@ class _StorageDetailsState extends State<StorageDetails> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(child: Text('${list.first.mutualFunds![index].fundName.toString()} - Net Asset Value: ${list.first.mutualFunds![index].nav.toString()}')),
-                Expanded(child: Text('${list.first.fixedDeposits![index].fundName.toString()} - Net Asset Value: ${list.first.fixedDeposits![index].nav.toString()}')),
-                Expanded(child: Text('${list.first.stocks![index].stockName.toString()} - Returns: ${list.first.stocks![index].returns.toString().split('.')[0]} %')),
+                Expanded(child: Text('${list.first.mutualFunds![index].fundName.toString()} - ${list.first.mutualFunds![index].nav.toString()}')),
+                Expanded(child: Text('${list.first.fixedDeposits![index].investmentAccountId.toString()} - ${list.first.fixedDeposits![index].interestRate.toString()} %')),
+                Expanded(child: Text('${list.first.stocks![index].stockName.toString()} - ${list.first.stocks![index].returns.toString().split('.')[0]} %')),
               ],
             ),
           ),

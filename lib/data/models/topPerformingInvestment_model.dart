@@ -1,3 +1,4 @@
+// class TopPerformingInvestment {
 class TopPerformingInvestment {
   List<MutualFunds>? mutualFunds;
   List<Stocks>? stocks;
@@ -49,7 +50,7 @@ class MutualFunds {
   String? fundManger;
   String? fundType;
   double? nav;
-  double? investmentAmount;
+  int? investmentAmount;
   int? investmentDate;
 
   MutualFunds(
@@ -113,39 +114,42 @@ class Stocks {
 }
 
 class FixedDeposits {
-  int? mututalFundId;
+  String? fixedDepositId;
   String? investmentAccountId;
-  String? fundName;
-  String? fundManger;
-  String? fundType;
-  double? nav;
-  double? investmentAmount;
-  int? investmentDate;
+  int? principalAmount;
+  double? interestRate;
+  int? maturityRate;
+  String? interestPaymentFrequency;
+  int? maturityAmount;
 
-  FixedDeposits({this.mututalFundId, this.investmentAccountId, this.fundName, this.fundManger, this.fundType, this.nav, this.investmentAmount, this.investmentDate});
+  FixedDeposits(
+      {this.fixedDepositId,
+        this.investmentAccountId,
+        this.principalAmount,
+        this.interestRate,
+        this.maturityRate,
+        this.interestPaymentFrequency,
+        this.maturityAmount});
 
   FixedDeposits.fromJson(Map<String, dynamic> json) {
-    mututalFundId = json['mututalFundId'];
+    fixedDepositId = json['fixedDepositId'];
     investmentAccountId = json['investmentAccountId'];
-    fundName = json['fundName'];
-    fundManger = json['fundManger'];
-    fundType = json['fundType'];
-    nav = json['nav'];
-    investmentAmount = json['investmentAmount'];
-    investmentDate = json['investmentDate'];
-
+    principalAmount = json['principalAmount'];
+    interestRate = json['interestRate'];
+    maturityRate = json['maturityRate'];
+    interestPaymentFrequency = json['interestPaymentFrequency'];
+    maturityAmount = json['maturityAmount'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['mututalFundId'] = this.mututalFundId;
+    data['fixedDepositId'] = this.fixedDepositId;
     data['investmentAccountId'] = this.investmentAccountId;
-    data['fundName'] = this.fundName;
-    data['fundManger'] = this.fundManger;
-    data['fundType'] = this.fundType;
-    data['nav'] = this.nav;
-    data['investmentAmount'] = this.investmentAmount;
-    data['investmentDate'] = this.investmentDate;
+    data['principalAmount'] = this.principalAmount;
+    data['interestRate'] = this.interestRate;
+    data['maturityRate'] = this.maturityRate;
+    data['interestPaymentFrequency'] = this.interestPaymentFrequency;
+    data['maturityAmount'] = this.maturityAmount;
     return data;
   }
 }
