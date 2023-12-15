@@ -47,7 +47,7 @@ class InvestmentCardGridView extends StatefulWidget {
 
   const InvestmentCardGridView({
     Key? key,
-    this.crossAxisCount = 3,
+    this.crossAxisCount = 4,
     this.childAspectRatio = 1,
   }) : super(key: key);
 
@@ -221,6 +221,51 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
                           ),
                           SizedBox(height: 5,),
                           Text('₹ ${state.customer.first.fixedDeposits.toString()}',
+                              style:
+                              TextStyle(fontSize: 14, color: Colors.white)),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    AnimatedContainer(
+                      duration: Duration(milliseconds: 1000),
+                      curve: Curves.easeInOut,
+                      transform: Matrix4.translationValues(
+                          startAnim ? 0 : screenWidth, 0, 0),
+                      padding: EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        color: secondaryColor,
+                        borderRadius: BorderRadius.all(Radius.circular(16)),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Icon(
+                            Icons.add_chart_outlined,
+                            color: Colors.greenAccent.withOpacity(0.5),
+                            size: 40,
+                          ),
+                          SizedBox(height: 10,),
+                          ProgressLine(
+                            color: Colors.greenAccent.withOpacity(0.5),
+                            percentage: 100, //widget.info.percentage,
+                          ),
+                          SizedBox(height: 10,),
+                          Center(
+                            child: Text(
+                              'Loans',
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ),
+                          SizedBox(height: 5,),
+                          Text('₹ ${state.customer.first.loans.toString()}',
                               style:
                               TextStyle(fontSize: 14, color: Colors.white)),
                         ],
