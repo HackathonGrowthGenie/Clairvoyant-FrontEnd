@@ -1,3 +1,4 @@
+import 'package:clairvoyant/screens/dashboard/cubits/detailed_investments/detailed_inv_cubit.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/available_balance_cubit/availablebal_cubit.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/historical_returns/historical_returns_cubit.dart';
 import 'package:clairvoyant/screens/dashboard/cubits/performing_investment/performing_inv_cubit.dart';
@@ -48,6 +49,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => ROICubit(),
+        ),
+        BlocProvider(
+          create: (context) => DetailedInvCubit(),
         ),
       ],
       child: MaterialApp(

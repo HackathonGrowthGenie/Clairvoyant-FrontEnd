@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'package:clairvoyant/data/models/availableBalance_model.dart';
+import 'package:clairvoyant/data/models/detailed_inv_model.dart';
 import 'package:clairvoyant/data/models/recent_transactions_model.dart';
 import 'package:clairvoyant/data/models/roi_model.dart';
 import 'package:clairvoyant/data/models/tax_calculation_model.dart';
@@ -166,6 +167,22 @@ class ROI{
       List list = [];
       list.add(postMaps);
       return  list.map((i) => ROIModel.fromJson(i)).toList();
+    }
+    catch(ex){
+      throw ex;
+    }
+  }
+}
+
+class DetailedInv{
+  API api =  API();
+  Future<List<DetailedInvModel>> fetchPost(String clientId)async{
+    try{
+      Response response = await api.sendRequest.get("/investmentAccount/detailedInvestments/$clientId");
+      Map<String, dynamic> postMaps = response.data;
+      List list = [];
+      list.add(postMaps);
+      return  list.map((i) => DetailedInvModel.fromJson(i)).toList();
     }
     catch(ex){
       throw ex;
