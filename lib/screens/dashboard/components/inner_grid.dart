@@ -833,10 +833,10 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('${list.first.loansDetails![index].loanType.toString()}', style: TextStyle(fontSize: 16, overflow: TextOverflow.ellipsis,)),
-                Text('${list.first.loansDetails![index].interestRate.toString()} %', style: TextStyle(fontSize: 16, overflow: TextOverflow.ellipsis,)),
-                Text('₹ ${list.first.loansDetails![index].loanAmount.toString()}', style: TextStyle(fontSize: 16, overflow: TextOverflow.ellipsis,)),
-                Text('${list.first.loansDetails![index].loanStatus.toString().split('T')[0]}', style: TextStyle(fontSize: 16, overflow: TextOverflow.ellipsis,)),
+                Expanded(child: Text('${list.first.loansDetails![index].loanType.toString()}', style: TextStyle(fontSize: 16, overflow: TextOverflow.ellipsis,))),
+                Expanded(child: Text('${list.first.loansDetails![index].interestRate.toString()} %', style: TextStyle(fontSize: 16, overflow: TextOverflow.ellipsis,))),
+                Expanded(child: Text('₹ ${list.first.loansDetails![index].loanAmount.toString()}', style: TextStyle(fontSize: 16, overflow: TextOverflow.ellipsis,))),
+                Expanded(child: Text('${list.first.loansDetails![index].loanStatus.toString().split('T')[0]}', style: TextStyle(fontSize: 16, overflow: TextOverflow.ellipsis,))),
               ],
             ),
           ),

@@ -67,14 +67,14 @@ class DetailedInvModel {
 }
 
 class StocksDetails {
-  int? stockId;
-  String? stockName;
-  String? stockSymbol;
-  String? stockExchange;
-  double? purchasePrice;
-  String? purchaseDate;
-  int? quantity;
-  String? investmentAccountID;
+  dynamic? stockId;
+  dynamic? stockName;
+  dynamic? stockSymbol;
+  dynamic? stockExchange;
+  dynamic? purchasePrice;
+  dynamic? purchaseDate;
+  dynamic? quantity;
+  dynamic? investmentAccountID;
 
   StocksDetails(
       {this.stockId,
@@ -112,14 +112,14 @@ class StocksDetails {
 }
 
 class MutualFundDetails {
-  int? mututalFundId;
-  String? investmentAccountId;
-  String? fundName;
-  String? fundManger;
-  String? fundType;
-  double? nav;
-  double? investmentAmount;
-  String? investmentDate;
+  dynamic? mututalFundId;
+  dynamic? investmentAccountId;
+  dynamic? fundName;
+  dynamic? fundManger;
+  dynamic? fundType;
+  dynamic? nav;
+  dynamic? investmentAmount;
+  dynamic? investmentDate;
 
   MutualFundDetails(
       {this.mututalFundId,
@@ -157,13 +157,13 @@ class MutualFundDetails {
 }
 
 class FixedDepositsDetails {
-  String? fixedDepositId;
-  String? investmentAccountId;
-  double? principalAmount;
-  double? interestRate;
-  String? maturityRate;
-  String? interestPaymentFrequency;
-  double? maturityAmount;
+  dynamic? fixedDepositId;
+  dynamic? investmentAccountId;
+  dynamic? principalAmount;
+  dynamic? interestRate;
+  dynamic? maturityRate;
+  dynamic? interestPaymentFrequency;
+  dynamic? maturityAmount;
 
   FixedDepositsDetails(
       {this.fixedDepositId,
@@ -198,16 +198,16 @@ class FixedDepositsDetails {
 }
 
 class LoansDetails {
-  int? loanId;
-  int? customerId;
-  String? loanType;
-  double? loanAmount;
-  double? interestRate;
-  String? loanStatus;
-  double? emi;
-  int? loanTerm;
-  String? disbursmentDate;
-  String? repaymentSchedule;
+  dynamic? loanId;
+  dynamic? customerId;
+  dynamic? loanType;
+  dynamic? loanAmount;
+  dynamic? interestRate;
+  dynamic? loanStatus;
+  dynamic? emi;
+  dynamic? loanTerm;
+  dynamic? disbursmentDate;
+  dynamic? repaymentSchedule;
 
   LoansDetails(
       {this.loanId,
