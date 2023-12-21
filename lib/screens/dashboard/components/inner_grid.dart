@@ -126,7 +126,9 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
                           Text("QTY", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),
                           Text("DATE", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),)
                         ],),
-                      BlocConsumer<DetailedInvCubit, DetailedInvState>(
+                      BlocProvider(
+                      create: (context) => DetailedInvCubit(),
+                      child: BlocConsumer<DetailedInvCubit, DetailedInvState>(
                         listener: (context, state) {
                           // TODO: implement listener
                         },
@@ -148,6 +150,7 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
 
                         },
                       ),
+),
                     ],
                   ),
 
@@ -258,7 +261,9 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
                           Text("AMOUNT", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),
                           Text("DATE", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),)
                         ],),
-                      BlocConsumer<DetailedInvCubit, DetailedInvState>(
+                      BlocProvider(
+                      create: (context) => DetailedInvCubit(),
+                      child: BlocConsumer<DetailedInvCubit, DetailedInvState>(
                         listener: (context, state) {
                           // TODO: implement listener
                         },
@@ -280,6 +285,7 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
 
                         },
                       ),
+),
                     ],
                   ),
 
@@ -390,7 +396,9 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
                           Text("MATURITY AMOUNT", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),
                           Text("FREQUENCY", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),)
                         ],),
-                      BlocConsumer<DetailedInvCubit, DetailedInvState>(
+                      BlocProvider(
+                      create: (context) => DetailedInvCubit(),
+                      child: BlocConsumer<DetailedInvCubit, DetailedInvState>(
                         listener: (context, state) {
                           // TODO: implement listener
                         },
@@ -412,6 +420,7 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
 
                         },
                       ),
+),
                     ],
                   ),
 
@@ -750,7 +759,9 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
                           Text("MATURITY AMOUNT", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),
                           Text("STATUS", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),)
                         ],),
-                      BlocConsumer<DetailedInvCubit, DetailedInvState>(
+                      BlocProvider(
+                      create: (context) => DetailedInvCubit(),
+                      child: BlocConsumer<DetailedInvCubit, DetailedInvState>(
                         listener: (context, state) {
                           // TODO: implement listener
                         },
@@ -772,6 +783,7 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
 
                         },
                       ),
+),
                     ],
                   ),
 

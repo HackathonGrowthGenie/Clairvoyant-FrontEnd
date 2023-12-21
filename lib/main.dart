@@ -35,23 +35,11 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => PerformingInvCubit(),
         ),
-        // BlocProvider(
-        //   create: (context) => TransactionCubit(),
-        // ),
-        // BlocProvider(
-        //   create: (context) => AvailableBalCubit(),
-        // ),
         BlocProvider(
           create: (context) => HistoricalReturnsCubit(),
         ),
         BlocProvider(
           create: (context) => TaxAssessmentCubit(),
-        ),
-        // BlocProvider(
-        //   create: (context) => ROICubit(),
-        // ),
-        BlocProvider(
-          create: (context) => DetailedInvCubit(),
         ),
       ],
       child: MaterialApp(
