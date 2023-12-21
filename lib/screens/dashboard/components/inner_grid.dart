@@ -199,10 +199,10 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('${list.first.stocksDetails![index].stockSymbol.toString()}'),
-                Text('₹ ${list.first.stocksDetails![index].purchasePrice.toString()}'),
+                Text('${list.first.stocksDetails![index].stockSymbol.toString()}', overflow: TextOverflow.ellipsis,),
+                Text('₹ ${list.first.stocksDetails![index].purchasePrice.toString()}', overflow: TextOverflow.ellipsis,),
                 Text('${list.first.stocksDetails![index].quantity.toString()}'),
-                Text('${list.first.stocksDetails![index].purchaseDate.toString().split('T')[0]}'),
+                Text('${list.first.stocksDetails![index].purchaseDate.toString().split('T')[0]}', overflow: TextOverflow.ellipsis,),
               ],
             ),
           ),
@@ -334,10 +334,10 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('${list.first.mutualFundDetails![index].fundName.toString()}'),
-                Text('${list.first.mutualFundDetails![index].nav.toString()} %'),
-                Text('₹ ${list.first.mutualFundDetails![index].investmentAmount.toString()}'),
-                Text('${list.first.mutualFundDetails![index].investmentDate.toString().split('T')[0]}'),
+                Expanded(child: Text('${list.first.mutualFundDetails![index].fundName.toString()}', overflow: TextOverflow.ellipsis,)),
+                Expanded(child: Text('${list.first.mutualFundDetails![index].nav.toString()} %' , overflow: TextOverflow.ellipsis,)),
+                Expanded(child: Text('₹ ${list.first.mutualFundDetails![index].investmentAmount.toString()}', overflow: TextOverflow.ellipsis,)),
+                Expanded(child: Text('${list.first.mutualFundDetails![index].investmentDate.toString().split('T')[0]}', overflow: TextOverflow.ellipsis,)),
               ],
             ),
           ),
@@ -392,9 +392,9 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text("INV ID", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),
-                          Text("INTEREST RATE", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),
-                          Text("MATURITY AMOUNT", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),
-                          Text("FREQUENCY", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),)
+                          Text("INT RATE", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),
+                          Text("MATURITY AMT", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),
+                          Text("FREQ", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),)
                         ],),
                       BlocProvider(
                       create: (context) => DetailedInvCubit(),
@@ -469,10 +469,10 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('${list.first.fixedDepositsDetails![index].fixedDepositId.toString()}'),
-                Text('${list.first.fixedDepositsDetails![index].interestRate.toString()} %'),
-                Text('₹ ${list.first.fixedDepositsDetails![index].maturityAmount.toString()}'),
-                Text('${list.first.fixedDepositsDetails![index].interestPaymentFrequency.toString().split('T')[0]}'),
+                Text('${list.first.fixedDepositsDetails![index].fixedDepositId.toString()}' , overflow: TextOverflow.ellipsis,),
+                Text('${list.first.fixedDepositsDetails![index].interestRate.toString()} %', overflow: TextOverflow.ellipsis,),
+                Text('₹ ${list.first.fixedDepositsDetails![index].maturityAmount.toString()}', overflow: TextOverflow.ellipsis,),
+                Text('${list.first.fixedDepositsDetails![index].interestPaymentFrequency.toString().split('T')[0]}', overflow: TextOverflow.ellipsis,),
               ],
             ),
           ),
@@ -754,10 +754,10 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("LOAN", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),
-                          Text("INTEREST RATE", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),
-                          Text("MATURITY AMOUNT", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),),
-                          Text("STATUS", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16),)
+                          Expanded(child: Text("LOAN", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16, overflow: TextOverflow.ellipsis,),)),
+                          Expanded(child: Text("INTEREST RATE", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16, overflow: TextOverflow.ellipsis,),)),
+                          Expanded(child: Text("MATURITY AMOUNT", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16, overflow: TextOverflow.ellipsis,),)),
+                          Expanded(child: Text("STATUS", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 16, overflow: TextOverflow.ellipsis,),))
                         ],),
                       BlocProvider(
                       create: (context) => DetailedInvCubit(),
@@ -833,10 +833,10 @@ class _InvestmentCardGridViewState extends State<InvestmentCardGridView> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('${list.first.loansDetails![index].loanType.toString()}'),
-                Text('${list.first.loansDetails![index].interestRate.toString()} %'),
-                Text('₹ ${list.first.loansDetails![index].loanAmount.toString()}'),
-                Text('${list.first.loansDetails![index].loanStatus.toString().split('T')[0]}'),
+                Text('${list.first.loansDetails![index].loanType.toString()}', style: TextStyle(fontSize: 16, overflow: TextOverflow.ellipsis,)),
+                Text('${list.first.loansDetails![index].interestRate.toString()} %', style: TextStyle(fontSize: 16, overflow: TextOverflow.ellipsis,)),
+                Text('₹ ${list.first.loansDetails![index].loanAmount.toString()}', style: TextStyle(fontSize: 16, overflow: TextOverflow.ellipsis,)),
+                Text('${list.first.loansDetails![index].loanStatus.toString().split('T')[0]}', style: TextStyle(fontSize: 16, overflow: TextOverflow.ellipsis,)),
               ],
             ),
           ),

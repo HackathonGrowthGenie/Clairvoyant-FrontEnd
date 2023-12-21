@@ -71,7 +71,7 @@ class StocksDetails {
   String? stockName;
   String? stockSymbol;
   String? stockExchange;
-  int? purchasePrice;
+  double? purchasePrice;
   String? purchaseDate;
   int? quantity;
   String? investmentAccountID;
@@ -118,7 +118,7 @@ class MutualFundDetails {
   String? fundManger;
   String? fundType;
   double? nav;
-  int? investmentAmount;
+  double? investmentAmount;
   String? investmentDate;
 
   MutualFundDetails(
@@ -159,11 +159,11 @@ class MutualFundDetails {
 class FixedDepositsDetails {
   String? fixedDepositId;
   String? investmentAccountId;
-  int? principalAmount;
+  double? principalAmount;
   double? interestRate;
   String? maturityRate;
   String? interestPaymentFrequency;
-  int? maturityAmount;
+  double? maturityAmount;
 
   FixedDepositsDetails(
       {this.fixedDepositId,
@@ -198,13 +198,13 @@ class FixedDepositsDetails {
 }
 
 class LoansDetails {
-  String? loanId;
+  int? loanId;
   int? customerId;
   String? loanType;
-  int? loanAmount;
+  double? loanAmount;
   double? interestRate;
   String? loanStatus;
-  int? emi;
+  double? emi;
   int? loanTerm;
   String? disbursmentDate;
   String? repaymentSchedule;
