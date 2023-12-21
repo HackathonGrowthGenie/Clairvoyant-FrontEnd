@@ -1,8 +1,11 @@
+import 'package:clairvoyant/data/models/availableBalance_model.dart';
 import 'package:clairvoyant/data/models/post_model.dart';
+import 'package:clairvoyant/screens/onboarding/bloc/clientBloc/clientSelection_bloc.dart';
 import 'package:clairvoyant/screens/onboarding/main_screen.dart';
 import 'package:clairvoyant/screens/onboarding/splash.dart';
 import 'package:clairvoyant/utils/responsive.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../utils/constants.dart';
@@ -86,7 +89,10 @@ class _ProfileCardState extends State<ProfileCard> {
                 await prefs.clear();
                 Navigator.of(context).pushAndRemoveUntil(
                   MaterialPageRoute(
-                    builder: (context) => Splash(),
+                    builder: (context) => BlocProvider(
+                    create: (context) => ClientSelectionBloc(),
+                    child: Splash(),
+                    ),
                   ), (Route<dynamic> route) => false
                 );
               },

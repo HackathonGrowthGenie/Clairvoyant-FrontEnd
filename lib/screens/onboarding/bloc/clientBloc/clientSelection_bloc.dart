@@ -1,8 +1,3 @@
-import 'package:clairvoyant/data/models/availableBalance_model.dart';
-import 'package:clairvoyant/data/models/historical_returns_model.dart';
-import 'package:clairvoyant/data/models/recent_transactions_model.dart';
-import 'package:clairvoyant/data/models/roi_model.dart';
-import 'package:clairvoyant/data/models/tax_calculation_model.dart';
 import 'package:clairvoyant/screens/onboarding/bloc/clientBloc/clientSelection_event.dart';
 import 'package:clairvoyant/screens/onboarding/bloc/clientBloc/clientSelection_state.dart';
 import 'package:dio/dio.dart';
@@ -23,7 +18,6 @@ class ClientSelectionBloc extends Bloc<ClientSelectionEvent, ClientSelectionStat
     });
     on<ClientSubmittedEvent>((event, emit) {
       fetchPost(event.clientId);
-      // fetchHistoryPost(event.clientId);
       emit(ClientIdLoadingState());
     });
   }
@@ -38,5 +32,4 @@ class ClientSelectionBloc extends Bloc<ClientSelectionEvent, ClientSelectionStat
         emit(DataErrorState(ex.message.toString()));
       }
     }
-
 }

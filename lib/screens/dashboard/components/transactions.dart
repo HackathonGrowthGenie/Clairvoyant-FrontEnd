@@ -8,8 +8,8 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../../utils/constants.dart';
 
-class RecentFiles extends StatelessWidget {
-  const RecentFiles({
+class RecentTran extends StatelessWidget {
+  const RecentTran({
     Key? key,
   }) : super(key: key);
 

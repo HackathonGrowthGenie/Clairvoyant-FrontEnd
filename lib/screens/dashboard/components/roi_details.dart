@@ -15,16 +15,16 @@ import '../cubits/popular_investment/popularInv_state.dart';
 import 'chart.dart';
 import 'investment_legends.dart';
 
-class StorageDetails extends StatefulWidget {
-  const StorageDetails({
+class RoiDetails extends StatefulWidget {
+  const RoiDetails({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<StorageDetails> createState() => _StorageDetailsState();
+  State<RoiDetails> createState() => _StorageDetailsState();
 }
 
-class _StorageDetailsState extends State<StorageDetails> {
+class _StorageDetailsState extends State<RoiDetails> {
   var width = 0.0;
   _popularInvModal(BuildContext context, width) {
     showDialog(

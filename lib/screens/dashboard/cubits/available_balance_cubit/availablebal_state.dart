@@ -2,6 +2,8 @@ import 'package:clairvoyant/data/models/availableBalance_model.dart';
 
 abstract class AvailableBalState{}
 
+class AvailableBalanceInitialState extends AvailableBalState{}
+
 class AvailableBalLoadingState extends AvailableBalState{}
 
 class AvailableBalLoadedState extends AvailableBalState{

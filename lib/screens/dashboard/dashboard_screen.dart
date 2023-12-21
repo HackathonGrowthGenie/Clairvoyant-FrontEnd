@@ -1,3 +1,6 @@
+import 'package:clairvoyant/screens/dashboard/cubits/available_balance_cubit/availablebal_cubit.dart';
+import 'package:clairvoyant/screens/dashboard/cubits/roi_cubit/roi_cubit.dart';
+import 'package:clairvoyant/screens/dashboard/cubits/transaction_cubit/transaction_cubit.dart';
 import 'package:clairvoyant/screens/onboarding/bloc/clientBloc/clientSelection_bloc.dart';
 import 'package:clairvoyant/utils/responsive.dart';
 import 'package:clairvoyant/screens/dashboard/components/inner_grid.dart';
@@ -19,9 +22,9 @@ class DashboardScreen extends StatelessWidget {
         // TODO: implement listener
       },
       builder: (context, state) {
-        if(state is ClientIdLoadingState){
+        if (state is ClientIdLoadingState) {
           return Center(child: CircularProgressIndicator());
-        }else if(state is DataLoadedState){
+        } else if (state is DataLoadedState) {
           return SafeArea(
             child: SingleChildScrollView(
               primary: false,
@@ -37,12 +40,21 @@ class DashboardScreen extends StatelessWidget {
                         flex: 5,
                         child: Column(
                           children: [
-                            MyInvestmentGrid(),
+                            BlocProvider(
+                              create: (context) => AvailableBalCubit(),
+                              child: MyInvestmentGrid(),
+                            ),
                             SizedBox(height: defaultPadding),
-                            RecentFiles(),
+                            BlocProvider(
+                              create: (context) => TransactionCubit(),
+                              child: RecentTran(),
+                            ),
                             if (Responsive.isMobile(context))
                               SizedBox(height: defaultPadding),
-                            if (Responsive.isMobile(context)) StorageDetails(),
+                            if (Responsive.isMobile(context)) BlocProvider(
+                              create: (context) => ROICubit(),
+                              child: RoiDetails(),
+                            ),
                           ],
                         ),
                       ),
@@ -50,9 +62,12 @@ class DashboardScreen extends StatelessWidget {
                         SizedBox(width: defaultPadding),
                       // On Mobile means if the screen is less than 850 we don't want to show it
                       if (!Responsive.isMobile(context))
-                        Expanded(
-                          flex: 2,
-                          child: StorageDetails(),
+                        BlocProvider(
+                          create: (context) => ROICubit(),
+                          child: Expanded(
+                            flex: 2,
+                            child: RoiDetails(),
+                          ),
                         ),
                     ],
                   ),
@@ -60,10 +75,10 @@ class DashboardScreen extends StatelessWidget {
               ),
             ),
           );
-        }else{
-          return Center(child: Text("Something Went Wrong", style: TextStyle(),));
+        } else {
+          return Center(
+              child: Text("Something Went Wrong", style: TextStyle(),));
         }
-
       },
     );
   }
